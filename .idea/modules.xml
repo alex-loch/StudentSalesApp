@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/StudentSalesApp/StudentSalesApp.iml" filepath="$PROJECT_DIR$/StudentSalesApp/StudentSalesApp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/StudentSalesAppProject.iml" filepath="$PROJECT_DIR$/StudentSalesAppProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StudentSalesApp/build/source/buildConfig/buildConfig.iml" filepath="$PROJECT_DIR$/StudentSalesApp/build/source/buildConfig/buildConfig.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StudentSalesApp/build/manifests/debug/debug.iml" filepath="$PROJECT_DIR$/StudentSalesApp/build/manifests/debug/debug.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StudentSalesApp/src/main/main.iml" filepath="$PROJECT_DIR$/StudentSalesApp/src/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StudentSalesApp/build/source/r/r.iml" filepath="$PROJECT_DIR$/StudentSalesApp/build/source/r/r.iml" />
     </modules>
   </component>
 </project>
