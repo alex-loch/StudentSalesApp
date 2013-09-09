@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical" >
+
+    <!-- Item Title -->
+    <TextView
+            android:id="@+id/product_label"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textIsSelectable="false"
+            android:text="@string/item_noTitle"/>
+
+    <!-- Item Price -->
+    <TextView
+            android:id="@+id/singleItemPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:textSize="20sp"
+            android:text="@string/item_notsetText" />
+
+    <!-- Main Item Image -->
+    <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/item_imageViewDescription"
+            />
+
+    <!-- Item Description -->
+    <TextView
+            android:id="@+id/singleItemDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:text="@string/item_notsetText" />
+
+    <!-- Item Location -->
+    <TextView
+            android:id="@+id/singleItemLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:text="@string/item_notsetText" />
+
+    <!-- Seller Phone Number -->
+    <TextView
+            android:id="@+id/singleItemPhoneNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:text="@string/item_notsetText" />
+
+    <ImageButton
+            android:layout_width="111dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/ImageButtonCallSeller"
+            android:layout_gravity="left|center_vertical"
+            android:layout_margin="10dp"
+            android:clickable="false"
+            android:src="@drawable/item_call"
+            android:adjustViewBounds="true"
+            android:layout_marginLeft="20dp"
+            android:onClick="callSellerButton"/>
+
+</LinearLayout>

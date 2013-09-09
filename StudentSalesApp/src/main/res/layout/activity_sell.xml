@@ -1,0 +1,180 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:fillViewport="true"
+            android:clickable="false">
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:windowSoftInputMode="stateUnchanged"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin" >
+
+        <!-- Title -->
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sell_title" />
+
+        <EditText
+                android:id="@+id/titleTextField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/sell_titleHint"
+                android:inputType="textCapWords" >
+        </EditText>
+        <TextView
+                android:id="@+id/titleValidateField"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FF0000"
+                android:text="" />
+
+        <!-- Description -->
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sell_description" />
+
+        <EditText
+                android:id="@+id/descriptionTextField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:minLines="1"
+                android:hint="@string/sell_descriptionHint"
+                android:inputType="textCapSentences|textMultiLine" >
+        </EditText>
+        <TextView
+                android:id="@+id/descriptionValidateField"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FF0000"
+                android:text="" />
+
+        <!-- Price -->
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sell_price" />
+
+        <EditText
+                android:id="@+id/priceTextField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:minLines="1"
+                android:inputType="number" >
+        </EditText>
+        <TextView
+                android:id="@+id/priceValidateField"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FF0000"
+                android:text="" />
+
+        <!-- Photos -->
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+            <TextView
+                    android:id="@+id/photosTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sell_photos" />
+
+            <ImageButton
+                    android:id="@+id/takePhotoButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/sell_takePhotoButtonDescription"
+                    android:onClick="takePhoto"
+                    android:src="@drawable/sell_camera" />
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center" >
+
+            <ImageView
+                    android:id="@+id/photoView1"
+                    android:layout_width="96dp"
+                    android:layout_height="128dp"
+                    android:layout_margin="1dp"
+                    android:contentDescription="@string/sell_photoViewDescription"
+                    android:src="@drawable/sell_image" />
+
+            <ImageView
+                    android:id="@+id/photoView2"
+                    android:layout_width="96dp"
+                    android:layout_height="128dp"
+                    android:layout_margin="1dp"
+                    android:contentDescription="@string/sell_photoViewDescription"
+                    android:src="@drawable/sell_image" />
+
+            <ImageView
+                    android:id="@+id/photoView3"
+                    android:layout_width="96dp"
+                    android:layout_height="128dp"
+                    android:layout_margin="1dp"
+                    android:contentDescription="@string/sell_photoViewDescription"
+                    android:src="@drawable/sell_image" />
+        </LinearLayout>
+
+        <!-- Phone Number -->
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sell_phoneNumber" />
+
+        <EditText
+                android:id="@+id/phoneNumberTextField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="phone" >
+        </EditText>
+        <TextView
+                android:id="@+id/contactValidateField"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FF0000"
+                android:text="" />
+
+        <!-- Location -->
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sell_location" />
+
+        <EditText
+                android:id="@+id/locationTextField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textCapWords"
+                android:enabled="false" >
+        </EditText>
+
+        <!-- Button -->
+        <Button
+                android:id="@+id/ButtonSellItem"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:onClick="buttonSellItem"
+                android:text="@string/sell_button_item"
+                android:textColor="#ffffff"
+                android:background="#669900">
+        </Button>
+    </LinearLayout>
+
+</ScrollView>

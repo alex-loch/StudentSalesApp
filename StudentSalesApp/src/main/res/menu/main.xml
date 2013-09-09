@@ -1,0 +1,28 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Search -->
+    <item android:id="@+id/action_search"
+          android:icon="@drawable/action_search"
+          android:title="@string/action_search"
+          android:showAsAction="always|collapseActionView"
+          android:actionViewClass="android.widget.SearchView"/>
+
+    <!--  Sell Option -->
+    <item
+            android:id="@+id/sell_option"
+            android:showAsAction="ifRoom"
+            android:icon="@drawable/actionbar_sell"
+            android:title="@string/sell_option_text" />
+
+    <!--  Review Option -->
+    <item
+            android:id="@+id/review_option"
+            android:showAsAction="never"
+            android:title="@string/review_option_text"/>
+
+    <!--  Settings Option -->
+    <item
+            android:id="@+id/settings_option"
+            android:showAsAction="never"
+            android:title="@string/settings_option_text"/>
+</menu>

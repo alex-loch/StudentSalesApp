@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!-- Application Name -->
+    <string name="app_name">Student Sales App</string>
+
+    <!-- Action Bar and Overflow -->
+    <string name="action_search">Search</string>
+    <string name="action_settings">Settings</string>
+    <string name="search_hint">Search Keyword</string>
+    <string name="sell_option_text">Sell</string>
+    <string name="review_option_text">Review Your Listing</string>
+    <string name="settings_option_text">Settings</string>
+    <!-- Main_activity -->
+    <string name="main_list">main_list</string>
+
+    <!-- Sell_activity -->
+    <string name="sell_title">Title</string>
+    <string name="sell_titleHint">Add a title for your item.</string>
+    <string name="sell_description">Item Description</string>
+    <string name="sell_descriptionHint">Add a description for your item.</string>
+    <string name="sell_price">Item Price</string>
+    <string name="sell_photos">Photos</string>
+    <string name="sell_takePhotoButtonDescription">Take image.</string>
+    <string name="sell_photoViewDescription">Images for the item.</string>
+    <string name="sell_phoneNumber">Phone Number</string>
+    <string name="sell_location">Location</string>
+    <string name="sell_button_item">Sell</string>
+
+    <!-- Single_buy_row -->
+    <string name="single_image">Image</string>
+
+    <!-- activities_main_item -->
+    <string name="item_noTitle">No Title Found.</string>
+    <string name="item_notsetText">No Information Listed</string>
+    <string name="item_imageViewDescription">Image Description</string>
+
+    <!-- Manifest -->
+    <string name="manifest_child">title_activity_display_message</string>
+
+</resources>
+
