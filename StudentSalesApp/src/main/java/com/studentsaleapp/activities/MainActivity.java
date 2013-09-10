@@ -1,19 +1,18 @@
-package com.activities;
+package com.studentsaleapp.activities;
 
 import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.SearchView;
-import android.widget.TextView;
+
+import com.studentsaleapp.activities.R;
 
 
 public class MainActivity extends Activity implements AdapterView.OnItemClickListener {

@@ -1,4 +1,9 @@
-package com.activities;
+package com.studentsaleapp.activities;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -29,13 +34,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-//import com.studentsaleapp.backend.ParseModel;
-//import com.studentsaleapp.backend.SaleItem;
+import com.studentsaleapp.activities.R;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import com.studentsaleapp.backend.ParseModel;
+import com.studentsaleapp.backend.SaleItem;
 
 
 public class SellActivity extends Activity {
@@ -149,6 +151,9 @@ public class SellActivity extends Activity {
 		case android.R.id.home:
 			finish();
 			return true;
+		/*case R.id.buy_option:
+			finish();
+			return (true);*/
 		}
 		return super.onOptionsItemSelected(item);
 	}
@@ -279,16 +284,16 @@ public class SellActivity extends Activity {
         }
 
 		// Create the sale item and add the fields
-		//SaleItem saleItem = new SaleItem();
-        //Location lastLocation = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-		//saleItem.setTitle(titleText);
-		//saleItem.setDescription(descriptionText);
-		//saleItem.setContact(phoneNumberText);
-       // saleItem.setLocation(lastLocation.getLatitude(), lastLocation.getLongitude());
-       // saleItem.setLocationString(locationText);
-		//saleItem.setPrice(Double.parseDouble(priceText));
-		//saleItem.setUserID(getDeviceID());
-		//saleItem.setImages(mImageBitmaps);
+		SaleItem saleItem = new SaleItem();
+        Location lastLocation = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+		saleItem.setTitle(titleText);
+		saleItem.setDescription(descriptionText);
+		saleItem.setContact(phoneNumberText);
+        saleItem.setLocation(lastLocation.getLatitude(), lastLocation.getLongitude());
+        saleItem.setLocationString(locationText);
+		saleItem.setPrice(Double.parseDouble(priceText));
+		saleItem.setUserID(getDeviceID());
+		saleItem.setImages(mImageBitmaps);
 		
 		Log.i(TAG, "Sell Item: " + titleText + ", " + descriptionText + ", " + phoneNumberText + ", " + locationText + ", " + priceText);
 		 	
@@ -296,9 +301,9 @@ public class SellActivity extends Activity {
 		Toast.makeText(this, "Listed Item '" + titleText + "'", Toast.LENGTH_SHORT).show();
 		
         // Add the item to the backend model and finish
-		//ParseModel model = new ParseModel(getApplicationContext());
-		//model.addItem(saleItem);
-		//finish();
+		ParseModel model = new ParseModel(getApplicationContext());
+		model.addItem(saleItem);
+		finish();
 	}
 	
 	/**
@@ -358,7 +363,7 @@ public class SellActivity extends Activity {
 	 * Set the location in the location field
 	 * 
 	 * @param location - location to be set
-	 * @throws java.io.IOException
+	 * @throws IOException
 	 */
 	public void setLocation(Location location) throws IOException{
 		// Get the latitude and longitude from the location

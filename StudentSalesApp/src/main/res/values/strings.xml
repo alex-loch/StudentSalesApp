@@ -16,7 +16,7 @@
     <string name="main_list">main_list</string>
 
     <!-- Sell_activity -->
-    <string name="sell_title">Title</string>
+    <string name="sell_title">Sell Your Items</string>
     <string name="sell_titleHint">Add a title for your item.</string>
     <string name="sell_description">Item Description</string>
     <string name="sell_descriptionHint">Add a description for your item.</string>
