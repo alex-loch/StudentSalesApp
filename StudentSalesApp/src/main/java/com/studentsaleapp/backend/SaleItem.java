@@ -17,7 +17,6 @@ public class SaleItem {
 	private String userID = "";
 	
 	private String itemID = null;
-	private ArrayList<Bitmap> mImageBitmaps = null;
 	private Images thumbnail;
 
 	/**
@@ -68,20 +67,6 @@ public class SaleItem {
 		this.contact = contact;
 	}
 	
-	/**
-	 * @return the item's images
-	 */
-	public ArrayList<Bitmap> getImages() {
-		return this.mImageBitmaps;
-	}
-	
-	/**
-	 * @param mImageBitmaps the list of images associated with this SaleItem
-	 */
-	public void setImages(ArrayList<Bitmap> mImageBitmaps) {
-		this.mImageBitmaps = mImageBitmaps;
-	}
-
 	/**
 	 * @return the longitude
 	 */
@@ -172,7 +157,7 @@ public class SaleItem {
 	/**
 	 * Note: this field should be automatically generated,
 	 * not set manually.
-	 * @param item set the item's itemID to itemID
+	 * @param itemID set the item's itemID to itemID
 	 */
 	public void setItemID(String itemID) {
 		this.itemID = itemID;

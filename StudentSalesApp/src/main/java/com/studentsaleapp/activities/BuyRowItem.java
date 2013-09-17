@@ -23,24 +23,27 @@ public class BuyRowItem {
 	/** The location set */
 	private String location;
 
+    /** The itemID */
+    private String itemID;
+
 	/**
 	 * Constructor for BuyRowItem ArrayList
 	 * 
-	 * @param images - value of id for image identifier
 	 * @param title - value and type for title set and display
 	 * @param desc - value and type for description set and display
 	 * @param price - value and type for price set and display
 	 * @param contact - value and type for contact set and display
 	 * @param location - value and type for location set and display
 	 */
-	public BuyRowItem(ArrayList<Bitmap> images, String title, String desc, String price,
-                      String contact, String location) {
-		this.images = images;
+	public BuyRowItem(String title, String desc, String price,
+                      String contact, String location, String itemID) {
+        this.images = new ArrayList<Bitmap>();
 		this.title = title;
 		this.desc = desc;
 		this.price = price;
 		this.contact = contact;
 		this.location = location;
+        this.itemID = itemID;
 	}
 
 	public ArrayList<Bitmap> getImages() {
@@ -62,6 +65,10 @@ public class BuyRowItem {
 	public String getTitle() {
 		return title;
 	}
+
+    public String getItemID() {
+        return itemID;
+    }
 	
 	public void setTitle(String title) {
 		this.title = title;

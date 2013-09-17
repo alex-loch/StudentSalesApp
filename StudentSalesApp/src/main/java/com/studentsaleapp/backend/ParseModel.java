@@ -19,6 +19,7 @@ import com.parse.ParseGeoPoint;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseException;
+import com.parse.ParseRelation;
 
 /**
  * A collection of methods to interact with the Parse database:
@@ -102,29 +103,29 @@ public class ParseModel implements BackendModel {
 			double latitude, double longitude, int sortMethod) {
 		
 		switch(sortMethod) {
-		case BEST_MATCH:
-			
-			// If dummy lat/long have been set, sorting is meaningless: skip
-			if ((latitude == 0.0) && (longitude == 0.0)) {
-				break;
-			}
-			
-			// The rest seems pretty hard to do
-			// Let's stick with the default for now
-			// I guess that's distance, how 'bout you?
-			// So falling through we will allow
-						
-		case DISTANCE:
-			ParseGeoPoint here = new ParseGeoPoint(latitude, longitude);
-			query.whereNear("location", here);
-			break;
-		case HIGHEST_PRICE:
-			query.addDescendingOrder("price");
-			break;
-		case LOWEST_PRICE:
-			query.addAscendingOrder("price");
-			break;
-		}
+            case BEST_MATCH:
+
+                // If dummy lat/long have been set, sorting is meaningless: skip
+                if ((latitude == 0.0) && (longitude == 0.0)) {
+                    break;
+                }
+
+                // The rest seems pretty hard to do
+                // Let's stick with the default for now
+                // I guess that's distance, how 'bout you?
+                // So falling through we will allow
+
+            case DISTANCE:
+                ParseGeoPoint here = new ParseGeoPoint(latitude, longitude);
+                query.whereNear("location", here);
+                break;
+            case HIGHEST_PRICE:
+                query.addDescendingOrder("price");
+                break;
+            case LOWEST_PRICE:
+                query.addAscendingOrder("price");
+                break;
+            }
 		
 		return query;
 	}
@@ -177,8 +178,8 @@ public class ParseModel implements BackendModel {
 	 * @param f the ParseFile to convert
 	 * @return the bitmap created from the given ParseFile
 	 */
-	private Bitmap parseFileToBitmap(ParseFile f) {
-		
+	public Bitmap parseFileToBitmap(ParseFile f) {
+
 		try {
 			byte[] data = f.getData();
 			Bitmap b = BitmapFactory.decodeByteArray(data, 0, data.length);
@@ -210,16 +211,15 @@ public class ParseModel implements BackendModel {
 		s.setPrice(p.getDouble("price"));
 		s.setUserID(p.getString("userid"));
 		s.setItemID(p.getObjectId());
-        // Convert parse files into bitmaps
-        /**
-        for (int i = 0; i < 3; i++) {
-            parseImage[i] = p.getParseFile(imageKeys[i]);
-            if (parseImage[i].isDataAvailable()) {
-                images.set(i, parseFileToBitmap(parseImage[i]));
-            }
-        }
-         */
-        s.setImages(images);
+
+//        // Convert parse files into bitmaps
+//        for (int i = 0; i < 3; i++) {
+//            parseImage[i] = p.getParseFile(imageKeys[i]);
+//            if (parseImage[i].isDataAvailable()) {
+//                images.set(i, parseFileToBitmap(parseImage[i]));
+//            }
+//        }
+
 		return s;
 	}
 
@@ -230,7 +230,7 @@ public class ParseModel implements BackendModel {
 	 * @param o the ParseObject to fill
 	 * @return the filled ParseObject
 	 */
-	private ParseObject fillParseObject(SaleItem s, ParseObject o) {
+	private void fillParseObject(SaleItem s, ParseObject o) {
 		o.put("title", s.getTitle());
 		o.put("description", s.getDescription());
 		o.put("contact", s.getContact());
@@ -238,47 +238,26 @@ public class ParseModel implements BackendModel {
 		o.put("coordinates", new ParseGeoPoint(s.getLatitude(), s.getLongitude()));
         o.put("location", s.getLocationString());
 		o.put("userid", s.getUserID());
-		s.getThumbnail();
-		
-		ParseFile imageOne;
-		ParseFile imageTwo;
-		ParseFile imageThree;
-		switch(s.getImages().size()) {
-			case 1:
-				imageOne = bitmapToParseFile(s.getImages().get(0));
-				o.put("imageOne", imageOne);
-				break;
-			case 2:
-				imageOne = bitmapToParseFile(s.getImages().get(0));
-				o.put("imageOne", imageOne);
-				
-				imageTwo = bitmapToParseFile(s.getImages().get(1));
-				o.put("imageTwo", imageTwo);
-				break;
-			case 3:
-				imageOne = bitmapToParseFile(s.getImages().get(0));
-				o.put("imageOne", imageOne);
-				
-				imageTwo = bitmapToParseFile(s.getImages().get(1));
-				o.put("imageTwo", imageTwo);
-				
-				imageThree = bitmapToParseFile(s.getImages().get(2));
-				o.put("imageThree", imageThree);
-				break;
-		}
-		return o;
 	}
 
-	@Override
-	public void addItem(SaleItem item) {
-		ParseObject object = new ParseObject("SaleItem");
-		this.fillParseObject(item, object);
+	public void addItem(SaleItem item, ArrayList<Bitmap> images) {
+		ParseObject saleItemObject = new ParseObject("SaleItem");
+        ParseObject imagesObject = new ParseObject("SaleItemImages");
+
+		this.fillParseObject(item, saleItemObject);
+        this.setItemImages(item, images, imagesObject);
+
 		try {
-			object.save();
+			saleItemObject.save();
+            imagesObject.save();
+
+            ParseRelation<ParseObject> relation = saleItemObject.getRelation("imageRelation");
+            relation.add(imagesObject);
+            saleItemObject.saveInBackground();
 		} catch (ParseException e) {
 			Log.e("ParseModel.addItem", e.toString());	
 		}
-		item.setItemID(object.getObjectId());
+		item.setItemID(saleItemObject.getObjectId());
 	}
 
 	@Override
@@ -311,19 +290,37 @@ public class ParseModel implements BackendModel {
 	}
 
 	@Override
-	public void setItemImages(SaleItem item, List<Bitmap> images) {
-		ParseObject o = this.findItem(item);
-		
+	public void setItemImages(SaleItem item, List<Bitmap> images, ParseObject o) {
+
 		for (Bitmap i : images) {
 			// Add images to Parse
-			ParseFile file = this.bitmapToParseFile(i);
-			ParseObject object = new ParseObject("Images");
-			object.put("file", file);
-			object.saveInBackground();
-			
-			// Link the images to the SaleItem
-			o.getRelation("images").add(object);
-		}		
+            ParseFile imageOne;
+            ParseFile imageTwo;
+            ParseFile imageThree;
+            switch(images.size()) {
+                case 1:
+                    imageOne = bitmapToParseFile(images.get(0));
+                    o.put("imageOne", imageOne);
+                    break;
+                case 2:
+                    imageOne = bitmapToParseFile(images.get(0));
+                    o.put("imageOne", imageOne);
+
+                    imageTwo = bitmapToParseFile(images.get(1));
+                    o.put("imageTwo", imageTwo);
+                    break;
+                case 3:
+                    imageOne = bitmapToParseFile(images.get(0));
+                    o.put("imageOne", imageOne);
+
+                    imageTwo = bitmapToParseFile(images.get(1));
+                    o.put("imageTwo", imageTwo);
+
+                    imageThree = bitmapToParseFile(images.get(2));
+                    o.put("imageThree", imageThree);
+                    break;
+            }
+		}
 	}
 
 	@Override

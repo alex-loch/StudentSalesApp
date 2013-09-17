@@ -293,8 +293,7 @@ public class SellActivity extends Activity {
         saleItem.setLocationString(locationText);
 		saleItem.setPrice(Double.parseDouble(priceText));
 		saleItem.setUserID(getDeviceID());
-		saleItem.setImages(mImageBitmaps);
-		
+
 		Log.i(TAG, "Sell Item: " + titleText + ", " + descriptionText + ", " + phoneNumberText + ", " + locationText + ", " + priceText);
 		 	
 		// For testing the following lines have been extracted from the above comment
@@ -302,7 +301,7 @@ public class SellActivity extends Activity {
 		
         // Add the item to the backend model and finish
 		ParseModel model = new ParseModel(getApplicationContext());
-		model.addItem(saleItem);
+		model.addItem(saleItem, mImageBitmaps);
 		finish();
 	}
 	

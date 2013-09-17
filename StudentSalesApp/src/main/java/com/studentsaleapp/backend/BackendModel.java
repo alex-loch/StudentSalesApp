@@ -7,6 +7,9 @@ import java.util.List;
 
 import android.graphics.Bitmap;
 
+import com.parse.ParseFile;
+import com.parse.ParseObject;
+
 public interface BackendModel {
 	
 	/**
@@ -27,7 +30,7 @@ public interface BackendModel {
 	 * 
 	 * @param item the item to be added
 	 */
-	public void addItem(SaleItem item);
+	public void addItem(SaleItem item, ArrayList<Bitmap> images);
 
 	/**
 	 * Finds the item in the database with the same itemID as item,
@@ -66,7 +69,7 @@ public interface BackendModel {
 	 * @param item set the images associated with this item
 	 * @param images a list of images to be associated with item
 	 */
-	public void setItemImages(SaleItem item, List<Bitmap> images);
+	public void setItemImages(SaleItem item, List<Bitmap> images, ParseObject o);
 
 	/**
 	 * Return a list of the next 20 items up for sale. This list doesn't have
@@ -78,7 +81,7 @@ public interface BackendModel {
 	 * ignored when searching (matched based on title). Ideally this method
 	 * should not be used (just leaving it here so nothing breaks).
 	 * 
-	 * @param start the index to start retrieving data
+//	 * @param start the index to start retrieving data
 	 * 
 	 * @return the 20 items up for sale after index start
 	 */
@@ -117,6 +120,13 @@ public interface BackendModel {
 	 */
 	public List<SaleItem> getItemListByUser(String userID);
 
+    /**
+     * Convert a ParseFile to a bitmap.
+     *
+     * @param f the ParseFile to convert
+     * @return the bitmap created from the given ParseFile
+     */
+    public Bitmap parseFileToBitmap(ParseFile f);
 
 }
 
