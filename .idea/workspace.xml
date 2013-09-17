@@ -31,16 +31,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0fb734d0-ba8e-457d-8582-07760a015c51" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudentSalesApp/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/StudentSalesApp/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/backend/BackendModel.java" afterPath="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/backend/BackendModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudentSalesApp/src/main/gen/com/studentsaleapp/activities/BuildConfig.java" afterPath="$PROJECT_DIR$/StudentSalesApp/src/main/gen/com/studentsaleapp/activities/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/BuyRowItem.java" afterPath="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/BuyRowItem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/MainBuyActivity.java" afterPath="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/MainBuyActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/backend/ParseModel.java" afterPath="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/backend/ParseModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/backend/SaleItem.java" afterPath="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/backend/SaleItem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/SellActivity.java" afterPath="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/SellActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudentSalesApp/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/StudentSalesApp/src/main/res/layout/activity_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="StudentSalesApp.iws" />
@@ -642,6 +632,11 @@
       <created>1378177887513</created>
       <updated>1378177887513</updated>
     </task>
+    <task id="LOCAL-00001" summary="Lazy loading!">
+      <created>1379429024679</created>
+      <updated>1379429024679</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
