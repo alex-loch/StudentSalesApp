@@ -90,7 +90,7 @@ public class MainBuyActivity extends ListActivity {
 		String location = ((TextView) view.findViewById(R.id.location)).getText().toString();
 
 		// Create, populate and start the single item activity
-		Intent singleItem = new Intent(getApplicationContext(), SingleBuyListItemActivity.class);
+		Intent singleItem = new Intent(this, SingleBuyListItemActivity.class);
 		singleItem.putExtra("product", product);
 		singleItem.putExtra("desc", desc);
 		singleItem.putExtra("price", price);
@@ -150,6 +150,7 @@ public class MainBuyActivity extends ListActivity {
             pDialog = new ProgressDialog(MainBuyActivity.this);
             pDialog.setMessage("Fetching items...");
             pDialog.setIndeterminate(false);
+            pDialog.setCancelable(false);
             pDialog.show();
         }
 

@@ -148,12 +148,12 @@ public class SellActivity extends Activity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-		case android.R.id.home:
-			finish();
-			return true;
-		/*case R.id.buy_option:
-			finish();
-			return (true);*/
+            case android.R.id.home:
+                finish();
+                return true;
+            /*case R.id.buy_option:
+                finish();
+                return (true);*/
 		}
 		return super.onOptionsItemSelected(item);
 	}

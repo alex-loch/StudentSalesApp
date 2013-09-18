@@ -26,7 +26,8 @@
         <!-- Main Activity -->
         <activity
             android:name="com.studentsaleapp.activities.MainBuyActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -40,7 +41,8 @@
         <activity
                 android:name="com.studentsaleapp.activities.SellActivity"
                 android:label="@string/sell_title"
-                android:parentActivityName="com.studentsaleapp.activities.MainBuyActivity" >
+                android:parentActivityName="com.studentsaleapp.activities.MainBuyActivity"
+                android:screenOrientation="portrait" >
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
                     android:value="com.example.studentsaleapp.MainBuyActivity" />
@@ -50,7 +52,8 @@
         <activity
             android:name="com.studentsaleapp.activities.SingleBuyListItemActivity"
             android:label="@string/single_image"
-            android:parentActivityName="com.studentsaleapp.activities.MainBuyActivity" >
+            android:parentActivityName="com.studentsaleapp.activities.MainBuyActivity"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.studentsaleapp.activities.MainBuyActivity" />
