@@ -6,6 +6,7 @@ import java.util.List;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.ListActivity;
+import android.app.ProgressDialog;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
@@ -19,6 +20,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.parse.ParseFile;
@@ -49,6 +51,10 @@ public class MainBuyActivity extends ListActivity {
 
 	/** The backend model */
 	private BackendModel model;
+
+    private ProgressDialog pDialog;
+
+    private BuyListViewAdapter adapter;
 
 	@SuppressLint("NewApi")
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
@@ -141,7 +147,10 @@ public class MainBuyActivity extends ListActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-        // TODO: Setup some sort of progress indicator
+            pDialog = new ProgressDialog(MainBuyActivity.this);
+            pDialog.setMessage("Fetching items...");
+            pDialog.setIndeterminate(false);
+            pDialog.show();
         }
 
         /**
@@ -162,6 +171,8 @@ public class MainBuyActivity extends ListActivity {
          * After background task has completed
          * **/
         protected void onPostExecute(String file_url) {
+            pDialog.cancel();
+
             // Temporary counter to go through static data as images & locations not yet in database.
             int temp_counter = 0;
             for (SaleItem item : fetchedRowItems) {
@@ -177,67 +188,57 @@ public class MainBuyActivity extends ListActivity {
             }
 
             // Setup the adapter
-            BuyListViewAdapter adapter = new BuyListViewAdapter(mContext,
+            adapter = new BuyListViewAdapter(mContext,
                     R.layout.single_buy_row, rowItems);
             setListAdapter(adapter);
 
-            new getImages(mContext, rowItems, fetchedRowItems, model).execute();
+            for (BuyRowItem item : rowItems) {
+                new getImages(mContext, item, model).execute();
+            }
         }
     }
 
     class getImages extends AsyncTask<Void, Void, String> {
         private Context mContext;
-        private ArrayList<BuyRowItem> rowItems;
-        private ArrayList<SaleItem> fetchedRowItems;
+        private BuyRowItem item;
 
-        public getImages (Context mContext, ArrayList<BuyRowItem> rowItems, ArrayList<SaleItem> fetchedRowItems, BackendModel model){
+        public getImages (Context mContext, BuyRowItem item, BackendModel model){
             this.mContext = mContext;
-            this.rowItems = rowItems;
-            this.fetchedRowItems = fetchedRowItems;
+            this.item = item;
         }
 
         /**
-         * Before background thread starts
-         * */
-//        @Override
-//        protected void onPreExecute() {
-//            super.onPreExecute();
-//        TODO: Setup some sort of progress indicator
-//        }
-
-        /**
-         * Get all listings
+         * Get all images
          * */
         protected String doInBackground(Void... params) {
-            for (BuyRowItem item : rowItems) {
-                String itemID = item.getItemID();
+            String itemID = item.getItemID();
 
-                ParseQuery<ParseObject> query = ParseQuery.getQuery("SaleItem");
-                query.whereEqualTo("objectId", itemID);
+            ParseQuery<ParseObject> query = ParseQuery.getQuery("SaleItem");
+            query.whereEqualTo("objectId", itemID);
 
-                try {
-                    List<ParseObject> tempList = query.find();
-                    ParseObject result = tempList.get(0);
-                    ParseRelation relation = result.getRelation("imageRelation");
+            try {
+                List<ParseObject> tempList = query.find();
+                ParseObject result = tempList.get(0);
+                ParseRelation relation = result.getRelation("imageRelation");
 
-                    ParseQuery<ParseObject> imageQuery = relation.getQuery();
-                    List<ParseObject> imageTempList = imageQuery.find();
+                ParseQuery<ParseObject> imageQuery = relation.getQuery();
+                List<ParseObject> imageTempList = imageQuery.find();
 
-                    if (imageTempList.size() > 0) {
-                        ParseObject imageResult = imageTempList.get(0);
-                        ParseFile file = imageResult.getParseFile("imageOne");
-                        if (file != null) {
-                            Bitmap b = model.parseFileToBitmap(file);
-                            ArrayList<Bitmap> tempArray = new ArrayList<Bitmap>();
-                            tempArray.add(b);
-                            item.setImages(tempArray);
-                        }
+                if (imageTempList.size() > 0) {
+                    ParseObject imageResult = imageTempList.get(0);
+                    ParseFile file = imageResult.getParseFile("imageOne");
+                    if (file != null) {
+                        Bitmap b = model.parseFileToBitmap(file);
+                        ArrayList<Bitmap> tempArray = new ArrayList<Bitmap>();
+                        tempArray.add(b);
+                        item.setImages(tempArray);
                     }
-
-                } catch (com.parse.ParseException e) {
-                    // Query error
                 }
+
+            } catch (com.parse.ParseException e) {
+                // Query error
             }
+
 
             return null;
         }
@@ -246,10 +247,8 @@ public class MainBuyActivity extends ListActivity {
          * After background task has completed
          * **/
         protected void onPostExecute(String file_url) {
-            // Setup the adapter
-            BuyListViewAdapter adapter = new BuyListViewAdapter(mContext,
-                    R.layout.single_buy_row, rowItems);
-            setListAdapter(adapter);
+            // Update the adapter
+            adapter.notifyDataSetChanged();
         }
     }
 

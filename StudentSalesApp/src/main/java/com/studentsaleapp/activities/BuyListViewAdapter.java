@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class BuyListViewAdapter extends ArrayAdapter<BuyRowItem> {
@@ -42,6 +43,7 @@ public class BuyListViewAdapter extends ArrayAdapter<BuyRowItem> {
 		TextView txtPrice;
 		TextView txtContact;
 		TextView txtLocation;
+        ProgressBar pBar;
 	}
 
 	/**
@@ -69,6 +71,7 @@ public class BuyListViewAdapter extends ArrayAdapter<BuyRowItem> {
 			holder.txtPrice = (TextView) convertView.findViewById(R.id.price);
 			holder.txtContact = (TextView) convertView.findViewById(R.id.contact);
 			holder.txtLocation = (TextView) convertView.findViewById(R.id.location);
+            holder.pBar = (ProgressBar) convertView.findViewById((R.id.pBar));
 			convertView.setTag(holder);
 		} else {
 			holder = (ViewHolder) convertView.getTag();
@@ -77,12 +80,16 @@ public class BuyListViewAdapter extends ArrayAdapter<BuyRowItem> {
 		// Assign values from BuyRowItem data values
 		holder.txtDesc.setText(rowItem.getDesc());
 		holder.txtTitle.setText(rowItem.getTitle());
-        if (rowItem.getImages().size() > 0) {
-		    holder.imageView.setImageBitmap(rowItem.getImages().get(0));
-        }
 		holder.txtPrice.setText(rowItem.getPrice());
 		holder.txtContact.setText(rowItem.getContact());
 		holder.txtLocation.setText(rowItem.getLocation());
+        holder.pBar.animate();
+
+        if (rowItem.getImages().size() > 0) {
+            holder.pBar.setVisibility(View.INVISIBLE);
+            holder.imageView.setImageBitmap(rowItem.getImages().get(0));
+        }
+
 		return convertView;
 	}
 
