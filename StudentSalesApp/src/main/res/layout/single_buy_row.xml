@@ -77,7 +77,7 @@
     <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@id/pBar"
+        android:id="@+id/pBar"
         android:layout_below="@+id/contact"
         android:layout_toLeftOf="@+id/title"
         android:layout_marginRight="13dp" />

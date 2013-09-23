@@ -27,6 +27,8 @@
     <string name="sell_phoneNumber">Phone Number</string>
     <string name="sell_location">Location</string>
     <string name="sell_button_item">Sell</string>
+    <string name="sell_priceHint">Add a price for you item.</string>
+    <string name="sell_phoneHint">Add a contact number for yourself.</string>
 
     <!-- Single_buy_row -->
     <string name="single_image">Image</string>
