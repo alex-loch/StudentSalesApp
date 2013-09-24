@@ -17,6 +17,7 @@ import com.studentsaleapp.activities.R;
 public class MainActivity extends Activity implements AdapterView.OnItemClickListener {
 
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
