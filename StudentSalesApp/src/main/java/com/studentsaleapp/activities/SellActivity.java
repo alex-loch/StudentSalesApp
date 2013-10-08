@@ -86,7 +86,7 @@ public class SellActivity extends Activity {
 		
 		// Setup the layout and buttons
 		setContentView(R.layout.activity_sell);
-		Button sButton = (Button) findViewById(R.id.ButtonSellItem);
+		//Button sButton = (Button) findViewById(R.id.ButtonSellItem);
 		//sButton.setBackgroundColor(Color.parseColor("#9c2e2e"));
 		
 		// Get the backend model
@@ -141,7 +141,7 @@ public class SellActivity extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.main, menu);
+		getMenuInflater().inflate(R.menu.sell_menu, menu);
 		return true;
 	}
 
@@ -150,6 +150,8 @@ public class SellActivity extends Activity {
 		switch (item.getItemId()) {
             case android.R.id.home:
                 finish();
+                return true;
+            case R.id.sell_option:
                 return true;
             /*case R.id.buy_option:
                 finish();

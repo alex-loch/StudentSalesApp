@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <!-- Icon -->
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:contentDescription="@string/single_image"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" />
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/icon"
+        android:paddingLeft="10dp"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textIsSelectable="false" />
+
+    <!-- DatePosted -->
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_toRightOf="@+id/icon"
+        android:paddingLeft="10dp"
+        android:textColor="#565656"
+        android:textSize="14sp"
+        android:textIsSelectable="false" />
+
+    <!-- Edit -->
+    <ImageButton
+        android:id="@+id/edit"
+        android:src="@drawable/review_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_toRightOf="@+id/date"
+        android:paddingLeft="10dp" />
+
+    <!-- Delete -->
+    <ImageButton
+        android:id="@+id/delete"
+        android:src="@drawable/review_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_toRightOf="@+id/edit"
+        android:paddingLeft="10dp" />
+
+    <!-- Place Filler -->
+    <TextView
+        android:id="@+id/contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_toRightOf="@+id/icon"
+        android:paddingLeft="10dp"
+        android:textColor="#3399FF"
+        android:textSize="14sp"
+        android:visibility="gone" />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pBar"
+        android:layout_below="@+id/contact"
+        android:layout_toLeftOf="@+id/title"
+        android:layout_marginRight="13dp"
+        android:indeterminate="true"
+        style="?android:attr/progressBarStyle"
+        android:layout_centerInParent="true"
+        android:indeterminateDrawable="@xml/progressbar"
+        />
+
+</RelativeLayout>

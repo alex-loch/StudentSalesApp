@@ -42,7 +42,8 @@
                 android:name="com.studentsaleapp.activities.SellActivity"
                 android:label="@string/sell_title"
                 android:parentActivityName="com.studentsaleapp.activities.MainBuyActivity"
-                android:screenOrientation="portrait" >
+                android:screenOrientation="portrait"
+                android:windowSoftInputMode="stateHidden">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
                     android:value="com.example.studentsaleapp.MainBuyActivity" />
@@ -51,13 +52,15 @@
         <!-- Single Buy List Item Activity -->
         <activity
             android:name="com.studentsaleapp.activities.SingleBuyListItemActivity"
-            android:label="@string/single_image"
+            android:label="@string/single_title"
             android:parentActivityName="com.studentsaleapp.activities.MainBuyActivity"
             android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.studentsaleapp.activities.MainBuyActivity" />
         </activity>
+
+        <!-- Review Activity -->
 
     </application>
 

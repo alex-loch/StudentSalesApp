@@ -61,10 +61,8 @@ public class MainBuyActivity extends ListActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
 		// Setup the layout
 		setContentView(R.layout.activity_main);
-
         new getListings(this.getApplicationContext()).execute();
 
         // Get the intent, verify the action and get the query
@@ -113,12 +111,12 @@ public class MainBuyActivity extends ListActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		super.onOptionsItemSelected(item);
 		switch(item.getItemId()) {
-			/*case R.id.buy_option:
-				return true;*/
-			case R.id.sell_option:
+				case R.id.sell_option:
 				Intent sellIntent = new Intent(this, SellActivity.class);
 				startActivity(sellIntent);
 				return true;
+                case R.id.review_option:
+                return true;
 		}
 		return (super.onOptionsItemSelected(item));
 	}
@@ -134,6 +132,7 @@ public class MainBuyActivity extends ListActivity {
     }
 
     class getListings extends AsyncTask<Void, Void, String> {
+
         ArrayList<SaleItem> fetchedRowItems;
         private Context mContext;
 
