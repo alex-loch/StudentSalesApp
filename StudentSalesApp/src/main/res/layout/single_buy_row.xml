@@ -10,7 +10,7 @@
             android:id="@+id/icon"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="5dp"
             android:contentDescription="@string/single_image"
             android:layout_marginLeft="10dp"
@@ -23,9 +23,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/pBar"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="-5dp"
             android:textColor="#333333"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             android:textIsSelectable="false" />
 
@@ -35,14 +36,14 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/title"
-            android:layout_marginTop="-5dp"
+            android:layout_marginTop="-3dp"
             android:layout_toRightOf="@+id/icon"
-            android:textColor="#bcbbbb"
+            android:layout_marginLeft="-5dp"
+            android:textColor="#8A8A8A"
             android:textSize="16sp"
             android:textIsSelectable="false"
-            android:maxLength="50"
-            android:maxLines="2"
             android:ellipsize="end"
+            android:singleLine="true"
             android:lineSpacingMultiplier="0.9"/>
 
     <!-- Price -->
@@ -52,12 +53,12 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/icon"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="-15dp"
+            android:layout_marginTop="-20dp"
             android:paddingBottom="2dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:textAlignment="2"
-            android:textColor="#333333"
+            android:textColor="#669900"
             android:textSize="16sp"
             android:textIsSelectable="false"
             android:textStyle="bold"
@@ -71,7 +72,7 @@
             android:layout_below="@+id/title"
             android:layout_toRightOf="@+id/icon"
             android:paddingLeft="10dp"
-            android:textColor="#3399FF"
+            android:textColor="#FFFFFF"
             android:textSize="14sp"
             android:visibility="gone" />
 
@@ -83,7 +84,7 @@
             android:layout_below="@+id/title"
             android:layout_toRightOf="@+id/icon"
             android:paddingLeft="10dp"
-            android:textColor="#3399FF"
+            android:textColor="#FFFFFF"
             android:textSize="14sp"
             android:visibility="gone" />
 
@@ -92,7 +93,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/pBar"
         android:layout_toLeftOf="@id/desc"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="22dp"
         android:indeterminate="true"
         style="?android:attr/progressBarStyle"
