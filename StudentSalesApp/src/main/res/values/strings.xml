@@ -42,7 +42,11 @@
     <string name="item_desctitle">Description:</string>
     <string name="item_pricetitle">Price:</string>
     <string name="item_noPrice">No Price Listed</string>
+<<<<<<< HEAD
     <string name="item_creationtitle">Listed:</string>
+=======
+    <string name="item_creationtitle">Posted On:</string>
+>>>>>>> c9aa50d3a8b865e36cf15b8c6be0b4ee47ab767f
     <string name="item_noTime">No Date Listed</string>
     <string name="item_locationtitle">Location:</string>
     <string name="item_nolocation">No Location Listed</string>

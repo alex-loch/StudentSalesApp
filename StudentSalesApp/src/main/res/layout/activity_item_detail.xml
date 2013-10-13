@@ -2,7 +2,10 @@
 <ScrollView
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+<<<<<<< HEAD
     android:padding="5dp"
+=======
+>>>>>>> c9aa50d3a8b865e36cf15b8c6be0b4ee47ab767f
     xmlns:android="http://schemas.android.com/apk/res/android">
 
 <LinearLayout
@@ -38,7 +41,11 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textColor="#669900"
+<<<<<<< HEAD
         android:paddingTop="2dp"
+=======
+        android:paddingTop="5dp"
+>>>>>>> c9aa50d3a8b865e36cf15b8c6be0b4ee47ab767f
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:text="@string/item_desctitle"/>
@@ -70,7 +77,10 @@
                 android:paddingTop="6dp"
                 android:text="@string/item_pricetitle"
                 android:textColor="#669900"
+<<<<<<< HEAD
                 android:textSize="16sp"
+=======
+>>>>>>> c9aa50d3a8b865e36cf15b8c6be0b4ee47ab767f
                 android:background="@drawable/borderright"/>
 
             <TextView
@@ -80,8 +90,11 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="85dp"
                 android:layout_alignParentRight="true"
+<<<<<<< HEAD
                 android:textSize="16sp"
                 android:textColor="#000000"
+=======
+>>>>>>> c9aa50d3a8b865e36cf15b8c6be0b4ee47ab767f
                 android:text="@string/item_noPrice"
                 />
 
@@ -101,7 +114,10 @@
                 android:gravity="left"
                 android:text="@string/item_creationtitle"
                 android:textColor="#669900"
+<<<<<<< HEAD
                 android:textSize="16sp"
+=======
+>>>>>>> c9aa50d3a8b865e36cf15b8c6be0b4ee47ab767f
                 android:background="@drawable/borderright"
                 android:paddingTop="6dp"/>
 
@@ -114,7 +130,10 @@
                 android:text="@string/item_noTime"
                 android:paddingTop="6dp"
                 android:ellipsize="none"
+<<<<<<< HEAD
                 android:textSize="16sp"
+=======
+>>>>>>> c9aa50d3a8b865e36cf15b8c6be0b4ee47ab767f
                 android:maxLength="11"/>
 
         </RelativeLayout>
@@ -131,7 +150,10 @@
             android:layout_height="30dp"
             android:layout_alignParentLeft="true"
             android:gravity="left"
+<<<<<<< HEAD
             android:textSize="16sp"
+=======
+>>>>>>> c9aa50d3a8b865e36cf15b8c6be0b4ee47ab767f
             android:paddingTop="6dp"
             android:text="@string/item_contacttitle"
             android:textColor="#669900"
@@ -144,7 +166,10 @@
             android:layout_height="30dp"
             android:layout_marginLeft="85dp"
             android:layout_alignParentRight="true"
+<<<<<<< HEAD
             android:textSize="16sp"
+=======
+>>>>>>> c9aa50d3a8b865e36cf15b8c6be0b4ee47ab767f
             android:text="@string/item_nocontact"
             />
 
@@ -158,11 +183,18 @@
         android:padding="5dp">
 
         <TextView
+<<<<<<< HEAD
             android:layout_width="78dp"
             android:layout_height="30dp"
             android:layout_alignParentLeft="true"
             android:gravity="left"
             android:textSize="16sp"
+=======
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:gravity="left"
+>>>>>>> c9aa50d3a8b865e36cf15b8c6be0b4ee47ab767f
             android:text="@string/item_locationtitle"
             android:textColor="#669900"
             android:paddingTop="6dp"/>
@@ -172,10 +204,15 @@
             android:minHeight="30dp"
             android:id="@+id/singleItemLocation"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
+=======
+            android:layout_marginLeft="78dp"
+>>>>>>> c9aa50d3a8b865e36cf15b8c6be0b4ee47ab767f
             android:paddingLeft="5dp"
             android:layout_alignParentRight="true"
             android:text="@string/item_nolocation"
             android:paddingTop="6dp"
+<<<<<<< HEAD
             android:textSize="16sp"
             android:paddingBottom="5dp"
             android:layout_marginStart="78dp"
@@ -191,6 +228,21 @@
 
     <Button
             android:layout_width="fill_parent"
+=======
+            android:paddingBottom="5dp"
+            android:layout_marginStart="80dp"
+            android:background="@drawable/borderleft"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/bottomborder"/>
+
+    <ImageButton
+            android:layout_width="wrap_content"
+>>>>>>> c9aa50d3a8b865e36cf15b8c6be0b4ee47ab767f
             android:layout_height="wrap_content"
             android:id="@+id/ImageButtonCallSeller"
             android:layout_gravity="left|center_vertical"
@@ -206,4 +258,8 @@
 
 </LinearLayout>
 
+<<<<<<< HEAD
+=======
+</LinearLayout>
+>>>>>>> c9aa50d3a8b865e36cf15b8c6be0b4ee47ab767f
 </ScrollView>

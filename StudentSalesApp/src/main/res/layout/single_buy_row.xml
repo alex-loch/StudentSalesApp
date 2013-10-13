@@ -54,7 +54,11 @@
         android:layout_below="@+id/desc"
         android:layout_toRightOf="@+id/icon"
         android:layout_marginLeft="-4dp"
+<<<<<<< HEAD
         android:layout_marginTop="5dp"
+=======
+        android:layout_marginTop="15dp"
+>>>>>>> c9aa50d3a8b865e36cf15b8c6be0b4ee47ab767f
         android:textColor="#8A8A8A"
         android:ellipsize="end"
         android:singleLine="true"
