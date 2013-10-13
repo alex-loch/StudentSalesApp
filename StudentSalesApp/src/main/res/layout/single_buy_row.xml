@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/pBar"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="-5dp"
+            android:layout_marginLeft="-4dp"
             android:textColor="#333333"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -38,13 +38,27 @@
             android:layout_below="@+id/title"
             android:layout_marginTop="-3dp"
             android:layout_toRightOf="@+id/icon"
-            android:layout_marginLeft="-5dp"
+            android:layout_marginLeft="-4dp"
             android:textColor="#8A8A8A"
             android:textSize="16sp"
             android:textIsSelectable="false"
             android:ellipsize="end"
             android:singleLine="true"
             android:lineSpacingMultiplier="0.9"/>
+
+    <!-- Location -->
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/desc"
+        android:layout_toRightOf="@+id/icon"
+        android:layout_marginLeft="-4dp"
+        android:layout_marginTop="15dp"
+        android:textColor="#8A8A8A"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textSize="10.5sp" />
 
     <!-- Price -->
     <TextView
@@ -76,17 +90,11 @@
             android:textSize="14sp"
             android:visibility="gone" />
 
-    <!-- Location -->
     <TextView
-            android:id="@+id/location"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/title"
-            android:layout_toRightOf="@+id/icon"
-            android:paddingLeft="10dp"
-            android:textColor="#FFFFFF"
-            android:textSize="14sp"
-            android:visibility="gone" />
+        android:id="@+id/creationTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
 
     <ProgressBar
         android:layout_width="wrap_content"
