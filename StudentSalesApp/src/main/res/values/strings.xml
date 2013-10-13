@@ -29,15 +29,25 @@
     <string name="sell_button_item">Sell</string>
     <string name="sell_priceHint">Add a price for your item.</string>
     <string name="sell_phoneHint">Add a contact number for yourself.</string>
+    <string name="item_call">Call Seller</string>
 
     <!-- Single_buy_row -->
-    <string name="single_title">ITEM TITLE</string>
+    <string name="single_title">Item For Sale</string>
     <string name="single_image">Image</string>
 
     <!-- activities_main_item -->
-    <string name="item_noTitle">No Title Found.</string>
+    <string name="item_noTitle">No Title Listed</string>
     <string name="item_notsetText">No Information Listed</string>
     <string name="item_imageViewDescription">Image Description</string>
+    <string name="item_desctitle">Description:</string>
+    <string name="item_pricetitle">Price:</string>
+    <string name="item_noPrice">No Price Listed</string>
+    <string name="item_creationtitle">Listed:</string>
+    <string name="item_noTime">No Date Listed</string>
+    <string name="item_locationtitle">Location:</string>
+    <string name="item_nolocation">No Location Listed</string>
+    <string name="item_contacttitle">Contact:</string>
+    <string name="item_nocontact">No Contact Listed</string>
 
     <!-- Review_activity -->
     <string name="review_title">Review Your Listings</string>

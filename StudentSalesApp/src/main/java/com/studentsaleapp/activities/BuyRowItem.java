@@ -1,6 +1,8 @@
 package com.studentsaleapp.activities;
 
 import java.util.ArrayList;
+import java.util.Date;
+
 import android.graphics.Bitmap;
 
 public class BuyRowItem {
@@ -26,6 +28,9 @@ public class BuyRowItem {
     /** The itemID */
     private String itemID;
 
+    /** Created Time */
+    private Date creationTime;
+
 	/**
 	 * Constructor for BuyRowItem ArrayList
 	 * 
@@ -36,7 +41,7 @@ public class BuyRowItem {
 	 * @param location - value and type for location set and display
 	 */
 	public BuyRowItem(String title, String desc, String price,
-                      String contact, String location, String itemID) {
+                      String contact, String location, String itemID, Date creationTime) {
         this.images = new ArrayList<Bitmap>();
 		this.title = title;
 		this.desc = desc;
@@ -44,6 +49,7 @@ public class BuyRowItem {
 		this.contact = contact;
 		this.location = location;
         this.itemID = itemID;
+        this.creationTime = creationTime;
 	}
 
 	public ArrayList<Bitmap> getImages() {
@@ -61,7 +67,15 @@ public class BuyRowItem {
 	public void setDesc(String desc) {
 		this.desc = desc;
 	}
-	
+
+    public Date getCreationTime() {
+        return creationTime;
+    }
+
+    public void setCreationTime(Date creationTime) {
+        this.creationTime = creationTime;
+    }
+
 	public String getTitle() {
 		return title;
 	}

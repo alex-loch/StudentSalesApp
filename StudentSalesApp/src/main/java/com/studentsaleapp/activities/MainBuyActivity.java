@@ -20,7 +20,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.SearchView;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.parse.ParseFile;
@@ -33,18 +32,6 @@ import com.studentsaleapp.backend.SaleItem;
 @SuppressLint("NewApi")
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class MainBuyActivity extends ListActivity {
-
-	public static final String[] location = new String[] {
-		"St. Lucia",
-		"Toowong",
-		"Auchenflower",
-		"Beenleigh",
-		"Brisbane CBD",
-		"South Bank",
-		"West End",
-		"Nerang"
-	};
-	/** ----- end static data -----*/
 
 	/** The row of items list */
 	private ArrayList<BuyRowItem> rowItems;
@@ -86,18 +73,19 @@ public class MainBuyActivity extends ListActivity {
 		String price = ((TextView) view.findViewById(R.id.price)).getText().toString();
 		String contact = ((TextView) view.findViewById(R.id.contact)).getText().toString();
 		String location = ((TextView) view.findViewById(R.id.location)).getText().toString();
+        String createdAt = ((TextView) view.findViewById(R.id.creationTime)).getText().toString();
 
 		// Create, populate and start the single item activity
 		Intent singleItem = new Intent(this, SingleBuyListItemActivity.class);
 		singleItem.putExtra("product", product);
 		singleItem.putExtra("desc", desc);
-		singleItem.putExtra("price", price);
 		singleItem.putExtra("contact", contact);
 		singleItem.putExtra("location", location);
 		singleItem.putExtra("iconimages", iconimages);
+        singleItem.putExtra("price", price);
+        singleItem.putExtra("creationTime", createdAt);
 		startActivity(singleItem);
 	}
-
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
@@ -181,12 +169,12 @@ public class MainBuyActivity extends ListActivity {
                         item.getDescription(),
                         formatPrice(item.getPrice()),
                         item.getContact(),
-                        location[temp_counter % location.length],
-                        item.getItemID()
+                        item.getLocationString(),
+                        item.getItemID(),
+                        item.getCreatedAt()
                 ));
                 temp_counter++;
             }
-
             // Setup the adapter
             adapter = new BuyListViewAdapter(mContext,
                     R.layout.single_buy_row, rowItems);
