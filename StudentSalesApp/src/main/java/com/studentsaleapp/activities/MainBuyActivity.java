@@ -1,5 +1,6 @@
 package com.studentsaleapp.activities;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +15,7 @@ import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,6 +25,10 @@ import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.assist.SimpleImageLoadingListener;
+import com.parse.Parse;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
@@ -55,6 +61,8 @@ public class MainBuyActivity extends ListActivity {
     private ProgressDialog pDialog;
 
     private BuyListViewAdapter adapter;
+
+    private Handler handler;
 
 	@SuppressLint("NewApi")
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
@@ -193,9 +201,10 @@ public class MainBuyActivity extends ListActivity {
                     R.layout.single_buy_row, rowItems);
             setListAdapter(adapter);
 
-            for (BuyRowItem item : rowItems) {
-                new getImages(mContext, item, model).execute();
+            for (BuyRowItem item: rowItems) {
+               new getImages(mContext, item, model).execute();
             }
+
         }
     }
 
@@ -227,12 +236,10 @@ public class MainBuyActivity extends ListActivity {
 
                 if (imageTempList.size() > 0) {
                     ParseObject imageResult = imageTempList.get(0);
-                    ParseFile file = imageResult.getParseFile("imageOne");
+                    ParseFile file = (ParseFile) imageResult.get("imageOne");
                     if (file != null) {
-                        Bitmap b = model.parseFileToBitmap(file);
-                        ArrayList<Bitmap> tempArray = new ArrayList<Bitmap>();
-                        tempArray.add(b);
-                        item.setImages(tempArray);
+                        String imageUri = file.getUrl();
+                        return imageUri;
                     }
                 }
 
@@ -240,16 +247,33 @@ public class MainBuyActivity extends ListActivity {
                 // Query error
             }
 
-
             return null;
         }
 
         /**
          * After background task has completed
          * **/
-        protected void onPostExecute(String file_url) {
-            // Update the adapter
-            adapter.notifyDataSetChanged();
+        protected void onPostExecute(String imageUri) {
+
+            DisplayImageOptions options = new DisplayImageOptions.Builder()
+                    .resetViewBeforeLoading(true)  // default
+                    .cacheOnDisc(true)
+                    .build();
+            ImageLoader imageLoader = ImageLoader.getInstance();
+
+            // Load image, decode it to Bitmap and return Bitmap to callback
+            imageLoader.loadImage(imageUri, options, new SimpleImageLoadingListener() {
+                @Override
+                public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
+                    // Do whatever you want with Bitmap
+                    ArrayList<Bitmap> tempArray = new ArrayList<Bitmap>();
+                    tempArray.add(loadedImage);
+                    item.setImages(tempArray);
+
+                    // Update the adapter
+                    adapter.notifyDataSetChanged();
+                }
+            });
         }
     }
 

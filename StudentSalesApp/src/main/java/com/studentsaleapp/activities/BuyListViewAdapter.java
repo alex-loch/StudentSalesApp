@@ -59,23 +59,36 @@ public class BuyListViewAdapter extends ArrayAdapter<BuyRowItem> {
 
 		LayoutInflater mInflater = (LayoutInflater) context
 				.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-		
+
+
+		// TODO: Attempt to fix this; code recycles views when scrolling for performance reasons, but if user scrolls whilst images are still loading it put images in wrong positions temporarily
 		// Check null value; if null, inflate from layout
 		// Assign holder to store the Image View and Text Views
-		if (convertView == null) {
-			convertView = mInflater.inflate(R.layout.single_buy_row, null);
-			holder = new ViewHolder();
-			holder.txtDesc = (TextView) convertView.findViewById(R.id.desc);
-			holder.txtTitle = (TextView) convertView.findViewById(R.id.title);
-			holder.imageView = (ImageView) convertView.findViewById(R.id.icon);
-			holder.txtPrice = (TextView) convertView.findViewById(R.id.price);
-			holder.txtContact = (TextView) convertView.findViewById(R.id.contact);
-			holder.txtLocation = (TextView) convertView.findViewById(R.id.location);
-            holder.pBar = (ProgressBar) convertView.findViewById((R.id.pBar));
-			convertView.setTag(holder);
-		} else {
-			holder = (ViewHolder) convertView.getTag();
-		}
+//		if (convertView == null) {
+//			convertView = mInflater.inflate(R.layout.single_buy_row, null);
+//			holder = new ViewHolder();
+//			holder.txtDesc = (TextView) convertView.findViewById(R.id.desc);
+//			holder.txtTitle = (TextView) convertView.findViewById(R.id.title);
+//			holder.imageView = (ImageView) convertView.findViewById(R.id.icon);
+//			holder.txtPrice = (TextView) convertView.findViewById(R.id.price);
+//			holder.txtContact = (TextView) convertView.findViewById(R.id.contact);
+//			holder.txtLocation = (TextView) convertView.findViewById(R.id.location);
+//            holder.pBar = (ProgressBar) convertView.findViewById((R.id.pBar));
+//			convertView.setTag(holder);
+//		} else {
+//			holder = (ViewHolder) convertView.getTag();
+//		}
+
+        convertView = mInflater.inflate(R.layout.single_buy_row, null);
+        holder = new ViewHolder();
+        holder.txtDesc = (TextView) convertView.findViewById(R.id.desc);
+        holder.txtTitle = (TextView) convertView.findViewById(R.id.title);
+        holder.imageView = (ImageView) convertView.findViewById(R.id.icon);
+        holder.txtPrice = (TextView) convertView.findViewById(R.id.price);
+        holder.txtContact = (TextView) convertView.findViewById(R.id.contact);
+        holder.txtLocation = (TextView) convertView.findViewById(R.id.location);
+        holder.pBar = (ProgressBar) convertView.findViewById((R.id.pBar));
+        convertView.setTag(holder);
 		
 		// Assign values from BuyRowItem data values
 		holder.txtDesc.setText(rowItem.getDesc());
