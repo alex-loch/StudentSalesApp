@@ -1,6 +1,5 @@
 package com.studentsaleapp.activities;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,9 +11,6 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -22,19 +18,16 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseRelation;
 import com.studentsaleapp.backend.BackendModel;
-import com.studentsaleapp.backend.ParseModel;
 import com.studentsaleapp.backend.SaleItem;
 
 @SuppressLint("NewApi")
@@ -54,7 +47,7 @@ public class MainBuyActivity extends ListActivity {
 	/** ----- end static data -----*/
 
 	/** The row of items list */
-	private ArrayList<BuyRowItem> rowItems = new ArrayList<BuyRowItem>();
+	private ArrayList<BuyRowItem> rowItems;
 
 	/** The backend model */
 	private BackendModel model;
@@ -62,9 +55,6 @@ public class MainBuyActivity extends ListActivity {
     private ProgressDialog pDialog;
 
     private BuyListViewAdapter adapter;
-
-    /** The location manager */
-    private LocationManager locationManager;
 
 	@SuppressLint("NewApi")
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
@@ -75,17 +65,14 @@ public class MainBuyActivity extends ListActivity {
 		// Setup the layout
 		setContentView(R.layout.activity_main);
 
-        Intent i = getIntent();
-        String query = i.getStringExtra("query");
-        new getListings(this.getApplicationContext(), query).execute();
+        new getListings(this.getApplicationContext()).execute();
 
         // Get the intent, verify the action and get the query
         Intent intent = getIntent();
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
-            String searchQuery = intent.getStringExtra(SearchManager.QUERY);
-            doSearch(searchQuery);
+            String query = intent.getStringExtra(SearchManager.QUERY);
+            doMySearch(query);
         }
-
 	}
 
 	/**
@@ -95,7 +82,7 @@ public class MainBuyActivity extends ListActivity {
 	public void onListItemClick(ListView parent, View view, int position, long id) {
 
 		// Get the item values
-		final int iconImages = 0; //images[position];
+		final int iconimages = 0; //images[position];
 		String product = ((TextView) view.findViewById(R.id.title)).getText().toString();
 		String desc = ((TextView) view.findViewById(R.id.desc)).getText().toString();
 		String price = ((TextView) view.findViewById(R.id.price)).getText().toString();
@@ -109,7 +96,7 @@ public class MainBuyActivity extends ListActivity {
 		singleItem.putExtra("price", price);
 		singleItem.putExtra("contact", contact);
 		singleItem.putExtra("location", location);
-		singleItem.putExtra("iconimages", iconImages);
+		singleItem.putExtra("iconimages", iconimages);
 		startActivity(singleItem);
 	}
 
@@ -119,7 +106,6 @@ public class MainBuyActivity extends ListActivity {
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-
         return true;
     }
 
@@ -143,26 +129,16 @@ public class MainBuyActivity extends ListActivity {
         return buffer.toString();
     }
 
-    private void doSearch(String query){
-
-        // Create, populate and start the single item activity
-        Intent search = new Intent(this, MainBuyActivity.class);
-        search.putExtra("query", query);
-        startActivity(search);
-
+    private void doMySearch(String query){
+        Log.e("myApp", query);
     }
 
     class getListings extends AsyncTask<Void, Void, String> {
         ArrayList<SaleItem> fetchedRowItems;
         private Context mContext;
-        private String mQuery;
-        private Location mLocation;
 
-        public getListings (Context context, String query){
+        public getListings (Context context){
             mContext = context;
-            mQuery = query;
-            setupLocation(mContext);
-            mLocation = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
         }
 
         /**
@@ -186,23 +162,9 @@ public class MainBuyActivity extends ListActivity {
             MainApplication appState = (MainApplication)getApplicationContext();
             model = appState.getBackendModel();
 
-            // Set dummy location if location is null
-            if (mLocation == null) {
-                mLocation = new Location(LocationManager.NETWORK_PROVIDER);
-                mLocation.setLatitude(-27.5981086);
-                mLocation.setLongitude(153.1372595);
-            }
-
             // Get row array
             rowItems = new ArrayList<BuyRowItem>();
-
-            // Set empty string is string is null (i.e. initial loading of app)
-            if (mQuery == null) {
-                mQuery = "";
-            }
-            fetchedRowItems = model.getItemList(mQuery, mLocation.getLatitude(),
-                    mLocation.getLongitude(), 0, BackendModel.DISTANCE);
-
+            fetchedRowItems = model.getItemList();
             return null;
         }
 
@@ -220,14 +182,15 @@ public class MainBuyActivity extends ListActivity {
                         item.getDescription(),
                         formatPrice(item.getPrice()),
                         item.getContact(),
-                        item.getLocationString(),
+                        location[temp_counter % location.length],
                         item.getItemID()
                 ));
                 temp_counter++;
             }
 
             // Setup the adapter
-            adapter = new BuyListViewAdapter(mContext, R.layout.single_buy_row, rowItems);
+            adapter = new BuyListViewAdapter(mContext,
+                    R.layout.single_buy_row, rowItems);
             setListAdapter(adapter);
 
             for (BuyRowItem item : rowItems) {
@@ -290,39 +253,5 @@ public class MainBuyActivity extends ListActivity {
         }
     }
 
-    /**
-     * Setup the network provider location listener and display fields
-     *
-     * @param context - context to be run on
-     */
-    private void setupLocation(Context context) {
-        boolean networkAvailable;
-
-        // Setup the location manager and determine if the GPS and Network Providers are available
-        locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
-        networkAvailable = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
-
-        // Setup the location listener
-        if (networkAvailable) {
-            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, networkLocationListener);
-        }
-    }
-
-    /**
-     * The network provider location listener which is only called once
-     */
-    LocationListener networkLocationListener = new LocationListener() {
-
-        /** Called when the location is found */
-        public void onLocationChanged(Location location) {
-            locationManager.removeUpdates(this);
-        }
-
-        public void onProviderDisabled(String provider) {}
-        public void onProviderEnabled(String provider) {}
-        public void onStatusChanged(String provider, int status, Bundle extras) {}
-    };
-
-
-    }
+}
 

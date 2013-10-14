@@ -40,7 +40,6 @@ import com.studentsaleapp.backend.ParseModel;
 import com.studentsaleapp.backend.SaleItem;
 
 
-
 public class SellActivity extends Activity {
 	
 	/** The logging tag */
