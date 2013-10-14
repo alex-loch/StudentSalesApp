@@ -1,73 +1,265 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+<<<<<<< HEAD
+    android:padding="5dp"
+=======
+>>>>>>> c9aa50d3a8b865e36cf15b8c6be0b4ee47ab767f
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<LinearLayout
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical" >
+
+    <!-- Main Item Image -->
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center"
+        android:contentDescription="@string/item_imageViewDescription"
+        />
 
     <!-- Item Title -->
     <TextView
             android:id="@+id/product_label"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:padding="10dip"
+            android:layout_margin="5dp"
             android:textColor="#000000"
             android:textSize="30sp"
             android:textStyle="bold"
             android:textIsSelectable="false"
-            android:text="@string/item_noTitle"/>
+            android:gravity="left"
+            android:text="@string/item_noTitle"
+            android:background="@drawable/bottomborder"/>
 
-    <!-- Item Price -->
+    <!-- Description title -->
     <TextView
-            android:id="@+id/singleItemPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dip"
-            android:textSize="20sp"
-            android:text="@string/item_notsetText" />
-
-    <!-- Main Item Image -->
-    <ImageView
-            android:id="@+id/imageView1"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
-            android:layout_gravity="center"
-            android:contentDescription="@string/item_imageViewDescription"
-            />
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#669900"
+<<<<<<< HEAD
+        android:paddingTop="2dp"
+=======
+        android:paddingTop="5dp"
+>>>>>>> c9aa50d3a8b865e36cf15b8c6be0b4ee47ab767f
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:text="@string/item_desctitle"/>
 
     <!-- Item Description -->
     <TextView
             android:id="@+id/singleItemDescription"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:padding="10dip"
-            android:text="@string/item_notsetText" />
+            android:textSize="16sp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:text="@string/item_notsetText"
+            android:background="@drawable/bottomborder"
+            android:paddingBottom="5dp"/>
 
-    <!-- Item Location -->
-    <TextView
-            android:id="@+id/singleItemLocation"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:padding="10dip"
-            android:text="@string/item_notsetText" />
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="5dp">
 
-    <!-- Seller Phone Number -->
-    <TextView
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_alignParentLeft="true"
+                android:gravity="left"
+                android:paddingTop="6dp"
+                android:text="@string/item_pricetitle"
+                android:textColor="#669900"
+<<<<<<< HEAD
+                android:textSize="16sp"
+=======
+>>>>>>> c9aa50d3a8b865e36cf15b8c6be0b4ee47ab767f
+                android:background="@drawable/borderright"/>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:paddingTop="6dp"
+                android:id="@+id/singleItemPrice"
+                android:layout_height="30dp"
+                android:layout_marginLeft="85dp"
+                android:layout_alignParentRight="true"
+<<<<<<< HEAD
+                android:textSize="16sp"
+                android:textColor="#000000"
+=======
+>>>>>>> c9aa50d3a8b865e36cf15b8c6be0b4ee47ab767f
+                android:text="@string/item_noPrice"
+                />
+
+            </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_alignParentLeft="true"
+                android:gravity="left"
+                android:text="@string/item_creationtitle"
+                android:textColor="#669900"
+<<<<<<< HEAD
+                android:textSize="16sp"
+=======
+>>>>>>> c9aa50d3a8b865e36cf15b8c6be0b4ee47ab767f
+                android:background="@drawable/borderright"
+                android:paddingTop="6dp"/>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:id="@+id/singleItemTime"
+                android:layout_height="30dp"
+                android:layout_marginLeft="85dp"
+                android:layout_alignParentRight="true"
+                android:text="@string/item_noTime"
+                android:paddingTop="6dp"
+                android:ellipsize="none"
+<<<<<<< HEAD
+                android:textSize="16sp"
+=======
+>>>>>>> c9aa50d3a8b865e36cf15b8c6be0b4ee47ab767f
+                android:maxLength="11"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:gravity="left"
+<<<<<<< HEAD
+            android:textSize="16sp"
+=======
+>>>>>>> c9aa50d3a8b865e36cf15b8c6be0b4ee47ab767f
+            android:paddingTop="6dp"
+            android:text="@string/item_contacttitle"
+            android:textColor="#669900"
+            android:background="@drawable/borderright"/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:paddingTop="6dp"
             android:id="@+id/singleItemPhoneNo"
-            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginLeft="85dp"
+            android:layout_alignParentRight="true"
+<<<<<<< HEAD
+            android:textSize="16sp"
+=======
+>>>>>>> c9aa50d3a8b865e36cf15b8c6be0b4ee47ab767f
+            android:text="@string/item_nocontact"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="5dp">
+
+        <TextView
+<<<<<<< HEAD
+            android:layout_width="78dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:gravity="left"
+            android:textSize="16sp"
+=======
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:gravity="left"
+>>>>>>> c9aa50d3a8b865e36cf15b8c6be0b4ee47ab767f
+            android:text="@string/item_locationtitle"
+            android:textColor="#669900"
+            android:paddingTop="6dp"/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:minHeight="30dp"
+            android:id="@+id/singleItemLocation"
             android:layout_height="wrap_content"
-            android:padding="10dip"
-            android:text="@string/item_notsetText" />
+<<<<<<< HEAD
+=======
+            android:layout_marginLeft="78dp"
+>>>>>>> c9aa50d3a8b865e36cf15b8c6be0b4ee47ab767f
+            android:paddingLeft="5dp"
+            android:layout_alignParentRight="true"
+            android:text="@string/item_nolocation"
+            android:paddingTop="6dp"
+<<<<<<< HEAD
+            android:textSize="16sp"
+            android:paddingBottom="5dp"
+            android:layout_marginStart="78dp"
+            android:layout_marginLeft="78dp"
+            android:background="@drawable/borderleft"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/bottomborder"/>
+
+    <Button
+            android:layout_width="fill_parent"
+=======
+            android:paddingBottom="5dp"
+            android:layout_marginStart="80dp"
+            android:background="@drawable/borderleft"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/bottomborder"/>
 
     <ImageButton
-            android:layout_width="111dp"
+            android:layout_width="wrap_content"
+>>>>>>> c9aa50d3a8b865e36cf15b8c6be0b4ee47ab767f
             android:layout_height="wrap_content"
             android:id="@+id/ImageButtonCallSeller"
             android:layout_gravity="left|center_vertical"
             android:layout_margin="10dp"
+            android:padding="5dp"
             android:clickable="false"
-            android:src="@drawable/item_call"
+            android:text="@string/item_call"
+            android:textColor="#FFFFFF"
             android:adjustViewBounds="true"
             android:layout_marginLeft="20dp"
-            android:onClick="callSellerButton"/>
+            android:onClick="callSellerButton"
+            android:background="#669900"/>
 
 </LinearLayout>
+
+<<<<<<< HEAD
+=======
+</LinearLayout>
+>>>>>>> c9aa50d3a8b865e36cf15b8c6be0b4ee47ab767f
+</ScrollView>

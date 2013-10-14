@@ -4,11 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    tools:ignore="MergeRootFrame" >
+    tools:ignore="MergeRootFrame"
+    android:background="#ffffff">
 
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@android:id/list"
-        android:layout_gravity="left|top" />
+        android:layout_gravity="left|top"
+        android:dividerHeight="1px"
+        android:divider="@drawable/listdivider"/>
+
+
 </FrameLayout>

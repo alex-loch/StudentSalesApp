@@ -213,6 +213,7 @@ public class ParseModel implements BackendModel {
 		s.setPrice(p.getDouble("price"));
 		s.setUserID(p.getString("userid"));
 		s.setItemID(p.getObjectId());
+        s.setCreatedAt(p.getCreatedAt());
 
 //        // Convert parse files into bitmaps
 //        for (int i = 0; i < 3; i++) {
@@ -224,7 +225,6 @@ public class ParseModel implements BackendModel {
 
 		return s;
 	}
-
 	/**
 	 * Add all fields in a SaleItem to a ParseObject.
 	 * 
