@@ -96,7 +96,7 @@ public interface BackendModel {
 	 * @param start the number of items to skip (for "Load/See More")
 	 * @return a list of items matching the given conditions
 	 */
-	public List<SaleItem> getItemList(int start);
+	public ArrayList<SaleItem> getItemList(int start);
 
 	/**
 	 * Return a list of items for sale matching the given conditions.
@@ -108,7 +108,7 @@ public interface BackendModel {
 	 * @param sortMethod one of the BackendModel sorting constants
 	 * @return a list of items matching the given conditions
 	 */
-	public List<SaleItem> getItemList(String searchQuery, 
+	public ArrayList<SaleItem> getItemList(String searchQuery,
 			double latitude, double longitude, int start, int sortMethod);
 	
 
@@ -118,7 +118,7 @@ public interface BackendModel {
 	 * @param userID the ID of the user
 	 * @return a list of all items added by the user
 	 */
-	public List<SaleItem> getItemListByUser(String userID);
+	public ArrayList<SaleItem> getItemListByUser(String userID);
 
     /**
      * Convert a ParseFile to a bitmap.
