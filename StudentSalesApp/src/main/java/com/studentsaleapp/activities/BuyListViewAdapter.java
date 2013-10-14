@@ -1,7 +1,5 @@
 package com.studentsaleapp.activities;
 
-import java.text.DateFormat;
-import java.util.Date;
 import java.util.List;
 
 
@@ -9,7 +7,6 @@ import com.studentsaleapp.activities.R;
 
 import android.app.Activity;
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,7 +43,6 @@ public class BuyListViewAdapter extends ArrayAdapter<BuyRowItem> {
 		TextView txtPrice;
 		TextView txtContact;
 		TextView txtLocation;
-        TextView txtCreationTime;
         ProgressBar pBar;
 	}
 
@@ -75,20 +71,18 @@ public class BuyListViewAdapter extends ArrayAdapter<BuyRowItem> {
 			holder.txtPrice = (TextView) convertView.findViewById(R.id.price);
 			holder.txtContact = (TextView) convertView.findViewById(R.id.contact);
 			holder.txtLocation = (TextView) convertView.findViewById(R.id.location);
-            holder.txtCreationTime = (TextView) convertView.findViewById(R.id.creationTime);
             holder.pBar = (ProgressBar) convertView.findViewById((R.id.pBar));
 			convertView.setTag(holder);
 		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}
-
+		
 		// Assign values from BuyRowItem data values
 		holder.txtDesc.setText(rowItem.getDesc());
 		holder.txtTitle.setText(rowItem.getTitle());
 		holder.txtPrice.setText(rowItem.getPrice());
 		holder.txtContact.setText(rowItem.getContact());
 		holder.txtLocation.setText(rowItem.getLocation());
-        holder.txtCreationTime.setText(rowItem.getCreationTime().toString());
         holder.pBar.animate();
 
         if (rowItem.getImages().size() > 0) {

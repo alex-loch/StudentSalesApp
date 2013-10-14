@@ -25,6 +25,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,6 +40,18 @@ import com.studentsaleapp.backend.SaleItem;
 @SuppressLint("NewApi")
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class MainBuyActivity extends ListActivity {
+
+	public static final String[] location = new String[] {
+		"St. Lucia",
+		"Toowong",
+		"Auchenflower",
+		"Beenleigh",
+		"Brisbane CBD",
+		"South Bank",
+		"West End",
+		"Nerang"
+	};
+	/** ----- end static data -----*/
 
 	/** The row of items list */
 	private ArrayList<BuyRowItem> rowItems = new ArrayList<BuyRowItem>();
@@ -58,16 +71,13 @@ public class MainBuyActivity extends ListActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
 		// Setup the layout
 		setContentView(R.layout.activity_main);
-<<<<<<< HEAD
 
         Intent i = getIntent();
         String query = i.getStringExtra("query");
         new getListings(this.getApplicationContext(), query).execute();
-=======
-        new getListings(this.getApplicationContext()).execute();
->>>>>>> 6004e0f3bbcbd74753e5e28fbdae24249a78cff4
 
         // Get the intent, verify the action and get the query
         Intent intent = getIntent();
@@ -91,23 +101,18 @@ public class MainBuyActivity extends ListActivity {
 		String price = ((TextView) view.findViewById(R.id.price)).getText().toString();
 		String contact = ((TextView) view.findViewById(R.id.contact)).getText().toString();
 		String location = ((TextView) view.findViewById(R.id.location)).getText().toString();
-        String createdAt = ((TextView) view.findViewById(R.id.creationTime)).getText().toString();
 
 		// Create, populate and start the single item activity
 		Intent singleItem = new Intent(this, SingleBuyListItemActivity.class);
 		singleItem.putExtra("product", product);
 		singleItem.putExtra("desc", desc);
+		singleItem.putExtra("price", price);
 		singleItem.putExtra("contact", contact);
 		singleItem.putExtra("location", location);
-<<<<<<< HEAD
 		singleItem.putExtra("iconimages", iconImages);
-=======
-		singleItem.putExtra("iconimages", iconimages);
-        singleItem.putExtra("price", price);
-        singleItem.putExtra("creationTime", createdAt);
->>>>>>> 6004e0f3bbcbd74753e5e28fbdae24249a78cff4
 		startActivity(singleItem);
 	}
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
@@ -122,12 +127,12 @@ public class MainBuyActivity extends ListActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		super.onOptionsItemSelected(item);
 		switch(item.getItemId()) {
-				case R.id.sell_option:
+			/*case R.id.buy_option:
+				return true;*/
+			case R.id.sell_option:
 				Intent sellIntent = new Intent(this, SellActivity.class);
 				startActivity(sellIntent);
 				return true;
-                case R.id.review_option:
-                return true;
 		}
 		return (super.onOptionsItemSelected(item));
 	}
@@ -148,7 +153,6 @@ public class MainBuyActivity extends ListActivity {
     }
 
     class getListings extends AsyncTask<Void, Void, String> {
-
         ArrayList<SaleItem> fetchedRowItems;
         private Context mContext;
         private String mQuery;
@@ -217,15 +221,11 @@ public class MainBuyActivity extends ListActivity {
                         formatPrice(item.getPrice()),
                         item.getContact(),
                         item.getLocationString(),
-<<<<<<< HEAD
                         item.getItemID()
-=======
-                        item.getItemID(),
-                        item.getCreatedAt()
->>>>>>> 6004e0f3bbcbd74753e5e28fbdae24249a78cff4
                 ));
                 temp_counter++;
             }
+
             // Setup the adapter
             adapter = new BuyListViewAdapter(mContext, R.layout.single_buy_row, rowItems);
             setListAdapter(adapter);

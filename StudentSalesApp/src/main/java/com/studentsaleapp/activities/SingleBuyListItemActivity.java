@@ -2,7 +2,6 @@ package com.studentsaleapp.activities;
 
 import com.studentsaleapp.activities.R;
 
-import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
@@ -15,14 +14,10 @@ import android.support.v4.app.NavUtils;
 import android.annotation.TargetApi;
 import android.content.Intent;
 import android.os.Build;
-
-import java.util.Date;
-
 public class SingleBuyListItemActivity extends Activity {
 	
 	/** The image integer */
 	private int images;
-    private TextView txtProduct;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +31,6 @@ public class SingleBuyListItemActivity extends Activity {
 		TextView txtContact = (TextView) findViewById(R.id.singleItemPhoneNo);
 		TextView txtLocation = (TextView) findViewById(R.id.singleItemLocation);
 		ImageView picImages = (ImageView) findViewById(R.id.imageView1);
-        TextView txtCreationTime = (TextView) findViewById(R.id.singleItemTime);
 		Intent i = getIntent();
 
 		// Getting attached intent data
@@ -45,7 +39,6 @@ public class SingleBuyListItemActivity extends Activity {
 		String price = i.getStringExtra("price");
 		String contact = i.getStringExtra("contact");
 		String location = i.getStringExtra("location");
-        String creationTime = i.getStringExtra("creationTime");
 		images = i.getExtras().getInt("iconimages");
 
 		// Displaying selected product name
@@ -54,15 +47,12 @@ public class SingleBuyListItemActivity extends Activity {
 		txtPrice.setText(price);
 		txtContact.setText(contact);
 		txtLocation.setText(location);
-        txtCreationTime.setText(creationTime);
 		picImages.setImageResource(images);
 
 		// Show the Up button in the action bar.
 		setupActionBar();
-        // Sets the Items title to the activities title.
-        setTitle(product);
 
-        // Checks if the contact number is set.
+        //Checks if the contact number is set.
         if (contact == null || contact.equals("")){
             findViewById(R.id.ImageButtonCallSeller).setClickable(false);
             findViewById(R.id.ImageButtonCallSeller).setBackgroundColor(0xFFBFBFBF);
@@ -89,7 +79,7 @@ public class SingleBuyListItemActivity extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.single_menu, menu);
+		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
 

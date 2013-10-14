@@ -3,8 +3,7 @@
 
     <style name="SSATheme" parent="android:style/Theme.Holo.Light.DarkActionBar">
         <item name="android:actionBarStyle">@style/actionBar</item>
-        <item name="android:editTextStyle">@style/SSAEditText</item>\
-        <item name="android:actionMenuTextColor">#66CC00</item>
+        <item name="android:editTextStyle">@style/SSAEditText</item>
     </style>
 
     <style name="actionBar" parent="android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">

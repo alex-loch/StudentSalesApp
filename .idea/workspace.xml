@@ -12,34 +12,27 @@
       </config>
     </shared>
     <layouts>
-      <layout url="file://$PROJECT_DIR$/StudentSalesApp/src/main/res/layout/activity_item_detail.xml">
-        <config>
-          <device>Nexus One</device>
-          <theme>@style/SSATheme</theme>
-        </config>
-      </layout>
       <layout url="file://$PROJECT_DIR$/StudentSalesApp/src/main/res/layout/activity_main.xml">
         <config>
-          <device>Nexus 4</device>
+          <device>Nexus 10</device>
           <theme>@android:style/Theme.Holo</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/StudentSalesApp/src/main/res/layout/activity_sell.xml">
         <config>
           <device>Nexus 4</device>
-          <theme>@android:style/Theme.Holo.Light.DarkActionBar</theme>
+          <theme>@android:style/Theme.Holo</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/StudentSalesApp/src/main/res/layout/single_buy_row.xml">
         <config>
-          <device>3.2in HVGA slider (ADP1)</device>
+          <device>Nexus 4</device>
           <theme>@style/SSATheme</theme>
         </config>
       </layout>
     </layouts>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="my" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
   </component>
   <component name="ChangeListManager">
@@ -116,7 +109,6 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-<<<<<<< HEAD
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
         <option name="NOTIFY_UNCAUGHT" value="true" />
@@ -135,10 +127,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-=======
-    </breakpoint_any>
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
->>>>>>> 6004e0f3bbcbd74753e5e28fbdae24249a78cff4
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -148,51 +136,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-<<<<<<< HEAD
       <file leaf-file-name="MainBuyActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/MainBuyActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="201" column="13" selection-start="6499" selection-end="6499" vertical-scroll-proportion="0.0" vertical-offset="2490" max-vertical-offset="4485">
-=======
-      <file leaf-file-name="activity_item_detail.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/res/layout/activity_item_detail.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="180" column="0" selection-start="6367" selection-end="6367" vertical-scroll-proportion="0.86923075" vertical-offset="2495" max-vertical-offset="3400">
-              <folding>
-                <element signature="e#589#624#0" expanded="true" />
-                <element signature="e#1073#1095#0" expanded="true" />
-                <element signature="e#1459#1483#0" expanded="true" />
-                <element signature="e#1829#1854#0" expanded="true" />
-                <element signature="e#2466#2491#0" expanded="true" />
-                <element signature="e#2940#2962#0" expanded="true" />
-                <element signature="e#3485#3513#0" expanded="true" />
-                <element signature="e#3961#3982#0" expanded="true" />
-                <element signature="e#4598#4625#0" expanded="true" />
-                <element signature="e#5036#5060#0" expanded="true" />
-                <element signature="e#5523#5551#0" expanded="true" />
-                <element signature="e#5991#6016#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_item_detail.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/res/layout-xlarge/activity_item_detail.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="3400">
->>>>>>> 6004e0f3bbcbd74753e5e28fbdae24249a78cff4
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< HEAD
       <file leaf-file-name="BackendModel.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/backend/BackendModel.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -209,40 +161,19 @@
           <provider selected="true" editor-type-id="text-editor">
             <state line="351" column="0" selection-start="10604" selection-end="10604" vertical-scroll-proportion="0.0" vertical-offset="4879" max-vertical-offset="5310">
               <folding />
-=======
-      <file leaf-file-name="activity_sell.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/res/layout/activity_sell.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="43" selection-start="1812" selection-end="1812" vertical-scroll-proportion="-8.16" vertical-offset="561" max-vertical-offset="3349">
-              <folding>
-                <element signature="e#578#611#0" expanded="true" />
-                <element signature="e#2254#2284#0" expanded="true" />
-              </folding>
->>>>>>> 6004e0f3bbcbd74753e5e28fbdae24249a78cff4
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< HEAD
       <file leaf-file-name="SingleBuyListItemActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/SingleBuyListItemActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="16" column="13" selection-start="453" selection-end="453" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="1335">
-=======
-      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="32" selection-start="2271" selection-end="2285" vertical-scroll-proportion="0.0" vertical-offset="475" max-vertical-offset="1088">
->>>>>>> 6004e0f3bbcbd74753e5e28fbdae24249a78cff4
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< HEAD
       <file leaf-file-name="BuyListViewAdapter.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/BuyListViewAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -252,8 +183,6 @@
           </provider>
         </entry>
       </file>
-=======
->>>>>>> 6004e0f3bbcbd74753e5e28fbdae24249a78cff4
     </leaf>
   </component>
   <component name="FindManager">
@@ -283,26 +212,6 @@
         <entry key="" value="true" />
       </map>
     </option>
-    <option name="availableProjects">
-      <map>
-        <entry>
-          <key>
-            <ExternalProjectPojo>
-              <option name="name" value="Documents" />
-              <option name="path" value="$PROJECT_DIR$/../.." />
-            </ExternalProjectPojo>
-          </key>
-          <value>
-            <list>
-              <ExternalProjectPojo>
-                <option name="name" value="Documents" />
-                <option name="path" value="$PROJECT_DIR$/../.." />
-              </ExternalProjectPojo>
-            </list>
-          </value>
-        </entry>
-      </map>
-    </option>
     <option name="modificationStamps">
       <map>
         <entry key="C:\Users\Alex\Documents" value="1377487134736" />
@@ -312,7 +221,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-<<<<<<< HEAD
         <option value="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/BuyListViewAdapter.java" />
         <option value="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/SingleBuyListItemActivity.java" />
         <option value="$PROJECT_DIR$/StudentSalesApp/src/main/res/menu/main.xml" />
@@ -329,38 +237,13 @@
         <option value="$PROJECT_DIR$/StudentSalesApp/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/backend/ParseModel.java" />
         <option value="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/MainBuyActivity.java" />
-=======
-        <option value="$PROJECT_DIR$/StudentSalesApp/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/StudentSalesApp/src/main/res/layout/activity_sell.xml" />
-        <option value="$PROJECT_DIR$/StudentSalesApp/src/main/res/xml/searchable.xml" />
-        <option value="$PROJECT_DIR$/StudentSalesApp/src/main/res/drawable/listdivider.xml" />
-        <option value="$PROJECT_DIR$/StudentSalesApp/src/main/res/drawable/bottomborder.xml" />
-        <option value="$PROJECT_DIR$/StudentSalesApp/src/main/res/drawable/borderright.xml" />
-        <option value="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/BuyRowItem.java" />
-        <option value="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/backend/SaleItem.java" />
-        <option value="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/SingleBuyListItemActivity.java" />
-        <option value="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/BuyListViewAdapter.java" />
-        <option value="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/backend/ParseModel.java" />
-        <option value="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/MainBuyActivity.java" />
-        <option value="$PROJECT_DIR$/StudentSalesApp/src/main/res/drawable/borderleft.xml" />
-        <option value="$PROJECT_DIR$/StudentSalesApp/src/main/res/layout/single_buy_row.xml" />
-        <option value="$PROJECT_DIR$/StudentSalesApp/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/StudentSalesApp/src/main/res/layout/activity_item_detail.xml" />
->>>>>>> 6004e0f3bbcbd74753e5e28fbdae24249a78cff4
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-<<<<<<< HEAD
     <option name="y" value="22" />
     <option name="width" value="1280" />
     <option name="height" value="774" />
-=======
-    <option name="x" value="1912" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
->>>>>>> 6004e0f3bbcbd74753e5e28fbdae24249a78cff4
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -402,76 +285,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Documents" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentSalesApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Documents" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GitHub" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentSalesApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentSalesApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Documents" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GitHub" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentSalesApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentSalesApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentSalesApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Documents" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GitHub" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentSalesApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentSalesApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -480,26 +293,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="StudentSalesApp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Documents" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GitHub" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentSalesApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentSalesApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
@@ -520,26 +313,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Documents" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GitHub" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentSalesApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentSalesApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -552,178 +325,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="StudentSalesApp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Documents" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GitHub" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentSalesApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentSalesApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentSalesApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Documents" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GitHub" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentSalesApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentSalesApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentSalesApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Documents" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GitHub" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentSalesApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentSalesApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentSalesApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Documents" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GitHub" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentSalesApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentSalesApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drawable" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentSalesApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Documents" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GitHub" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentSalesApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentSalesApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
@@ -764,26 +365,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="StudentSalesApp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Documents" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GitHub" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentSalesApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentSalesApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
@@ -866,62 +447,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="activities" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentSalesApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentSalesApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com.studentsaleapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentSalesApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com.studentsaleapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="activities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentSalesApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -1136,13 +661,8 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-<<<<<<< HEAD
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
-=======
-    <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="show.migrate.to.gradle.popup" value="false" />
->>>>>>> 6004e0f3bbcbd74753e5e28fbdae24249a78cff4
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -1154,17 +674,17 @@
       <recent name="C:\Users\Alex\Documents\GitHub\StudentSalesAppProject\StudentSalesApp\libs" />
       <recent name="C:\Users\Alex\Documents\GitHub\StudentSalesAppProject\StudentSalesApp\src\main\java\com\activities" />
     </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.studentsaleapp" />
-      <recent name="com" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Alex\Documents\GitHub\StudentSalesApp\StudentSalesApp\src\main\res\drawable-xxhdpi" />
       <recent name="C:\Users\Alex\Documents\GitHub\StudentSalesAppProject\StudentSalesApp\src\main\res\drawable" />
       <recent name="C:\Users\Alex\Documents\GitHub\StudentSalesAppProject\StudentSalesApp\src\main\res\drawable-xhdpi" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.studentsaleapp" />
+      <recent name="com" />
+    </key>
   </component>
-  <component name="RunManager" selected="Android Application.StudentSalesApp">
+  <component name="RunManager" selected="Android Application.main">
     <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
       <module name="" />
       <setting name="path" value="" />
@@ -1190,7 +710,6 @@
       <option name="NETWORK_SPEED" value="full" />
       <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -1212,33 +731,6 @@
       <option name="VM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1289,7 +781,6 @@
       <option name="NETWORK_SPEED" value="full" />
       <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
     <configuration default="false" name="StudentSalesApp" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -1306,7 +797,6 @@
       <option name="NETWORK_SPEED" value="full" />
       <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <RunnerSettings RunnerId="AndroidDebugRunner" />
       <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
       <method />
@@ -1317,11 +807,7 @@
       <option name="MODE" value="default_activity" />
       <option name="DEPLOY" value="true" />
       <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-<<<<<<< HEAD
       <option name="PREFERRED_AVD" value="" />
-=======
-      <option name="PREFERRED_AVD" value="MyAvd0" />
->>>>>>> 6004e0f3bbcbd74753e5e28fbdae24249a78cff4
       <option name="USE_COMMAND_LINE" value="true" />
       <option name="COMMAND_LINE" value="" />
       <option name="WIPE_USER_DATA" value="false" />
@@ -1329,7 +815,6 @@
       <option name="NETWORK_SPEED" value="full" />
       <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <RunnerSettings RunnerId="AndroidDebugRunner" />
       <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
       <method />
@@ -1350,6 +835,12 @@
       <item index="1" class="java.lang.String" itemvalue="Android Application.main" />
       <item index="2" class="java.lang.String" itemvalue="Groovy.build" />
     </list>
+    <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
     <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
     </configuration>
@@ -1418,7 +909,6 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-<<<<<<< HEAD
     <frame x="0" y="22" width="1280" height="774" extended-state="6" />
     <editor active="true" />
     <layout>
@@ -1428,23 +918,9 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6406728" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16513762" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
-=======
-    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
-    <layout>
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295063" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37726787" sideWeight="0.77802444" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852387" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39933258" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22197558" sideWeight="0.20811099" order="12" side_tool="true" content_ui="tabs" />
->>>>>>> 6004e0f3bbcbd74753e5e28fbdae24249a78cff4
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-<<<<<<< HEAD
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30733946" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3180428" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1454,29 +930,14 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19205834" sideWeight="0.6452599" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35474005" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-=======
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3107658" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22197558" sideWeight="0.791889" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32741398" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23265742" sideWeight="0.77802444" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23751387" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
->>>>>>> 6004e0f3bbcbd74753e5e28fbdae24249a78cff4
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="2559" y="1" width="2562" height="1383" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19529983" sideWeight="0.6712538" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-<<<<<<< HEAD
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295063" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32721713" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-=======
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32741398" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
->>>>>>> 6004e0f3bbcbd74753e5e28fbdae24249a78cff4
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1541,20 +1002,13 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="13" selection-start="423" selection-end="423" vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="1215">
-=======
-    <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/backend/SaleItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="32" selection-start="577" selection-end="577" vertical-scroll-proportion="0.48247078" vertical-offset="34" max-vertical-offset="3536">
->>>>>>> 6004e0f3bbcbd74753e5e28fbdae24249a78cff4
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/res/layout/activity_sell.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2820">
@@ -1568,25 +1022,6 @@
     <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/res/layout/activity_main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="21" selection-start="176" selection-end="176" vertical-scroll-proportion="0.07512521" vertical-offset="0" max-vertical-offset="599">
-=======
-    <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/SellActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="13" selection-start="1201" selection-end="1201" vertical-scroll-proportion="0.0" vertical-offset="1989" max-vertical-offset="7718">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/SingleBuyListItemActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="39" selection-start="1682" selection-end="1682" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1632">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/BuyRowItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="5" selection-start="2098" selection-end="2098" vertical-scroll-proportion="2.3394496" vertical-offset="425" max-vertical-offset="2142">
->>>>>>> 6004e0f3bbcbd74753e5e28fbdae24249a78cff4
           <folding />
         </state>
       </provider>
@@ -1594,20 +1029,13 @@
         <state />
       </provider>
     </entry>
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/res/xml/searchable.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="44" selection-start="155" selection-end="155" vertical-scroll-proportion="0.07188498" vertical-offset="0" max-vertical-offset="626">
-=======
-    <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/MainApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="4" selection-start="536" selection-end="536" vertical-scroll-proportion="0.46972477" vertical-offset="50" max-vertical-offset="595">
->>>>>>> 6004e0f3bbcbd74753e5e28fbdae24249a78cff4
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/res/menu/main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="54" selection-start="280" selection-end="280" vertical-scroll-proportion="0.14376996" vertical-offset="0" max-vertical-offset="626" />
@@ -1616,23 +1044,10 @@
     <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/SellActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="43" column="39" selection-start="1228" selection-end="1228" vertical-scroll-proportion="0.0" vertical-offset="3" max-vertical-offset="6795">
-=======
-    <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/BuyListViewAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="27" selection-start="2516" selection-end="2516" vertical-scroll-proportion="0.8733945" vertical-offset="561" max-vertical-offset="1564">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/backend/ParseModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="213" column="39" selection-start="6461" selection-end="6461" vertical-scroll-proportion="0.7174312" vertical-offset="2907" max-vertical-offset="5984">
->>>>>>> 6004e0f3bbcbd74753e5e28fbdae24249a78cff4
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="37" column="19" selection-start="1697" selection-end="1697" vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="1050">
@@ -1643,57 +1058,32 @@
     <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/android/app/ListActivity.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="42" selection-start="570" selection-end="570" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
-=======
-    <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/res/drawable/borderright.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="681" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
->>>>>>> 6004e0f3bbcbd74753e5e28fbdae24249a78cff4
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
     <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/java/util/concurrent/ThreadPoolExecutor.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="106" column="0" selection-start="5096" selection-end="5096" vertical-scroll-proportion="0.0" vertical-offset="1216" max-vertical-offset="1665" />
-=======
-    <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/res/drawable/borderleft.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="14" selection-start="137" selection-end="137" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
-          <folding />
-        </state>
->>>>>>> 6004e0f3bbcbd74753e5e28fbdae24249a78cff4
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/MainBuyActivity.java">
+    <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/res/layout/activity_item_detail.xml">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1170">
-=======
-        <state line="76" column="49" selection-start="2532" selection-end="2532" vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="3808">
->>>>>>> 6004e0f3bbcbd74753e5e28fbdae24249a78cff4
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/res/layout/activity_main.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
-<<<<<<< HEAD
     </entry>
     <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/SingleBuyListItemActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="13" selection-start="453" selection-end="453" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1335">
-=======
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="24" selection-start="466" selection-end="466" vertical-scroll-proportion="-8.16" vertical-offset="0" max-vertical-offset="391">
->>>>>>> 6004e0f3bbcbd74753e5e28fbdae24249a78cff4
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/backend/BackendModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="17" selection-start="275" selection-end="275" vertical-scroll-proportion="0.0" vertical-offset="1024" max-vertical-offset="1950">
@@ -1706,26 +1096,10 @@
     <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/backend/ParseModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="351" column="0" selection-start="10604" selection-end="10604" vertical-scroll-proportion="0.0" vertical-offset="4879" max-vertical-offset="5310">
-=======
-    <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/res/layout/single_buy_row.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="33" selection-start="2237" selection-end="2237" vertical-scroll-proportion="0.6730769" vertical-offset="653" max-vertical-offset="1989">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="32" selection-start="2271" selection-end="2285" vertical-scroll-proportion="0.0" vertical-offset="475" max-vertical-offset="1088">
->>>>>>> 6004e0f3bbcbd74753e5e28fbdae24249a78cff4
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/BuyListViewAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="55" column="19" selection-start="1471" selection-end="1471" vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="1335">
@@ -1736,51 +1110,7 @@
     <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/MainBuyActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="201" column="13" selection-start="6499" selection-end="6499" vertical-scroll-proportion="0.0" vertical-offset="2490" max-vertical-offset="4485">
-=======
-    <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/res/layout/activity_sell.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="43" selection-start="1812" selection-end="1812" vertical-scroll-proportion="-8.16" vertical-offset="561" max-vertical-offset="3349">
-          <folding>
-            <element signature="e#578#611#0" expanded="true" />
-            <element signature="e#2254#2284#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/res/layout-xlarge/activity_item_detail.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3400">
->>>>>>> 6004e0f3bbcbd74753e5e28fbdae24249a78cff4
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/res/layout/activity_item_detail.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="180" column="0" selection-start="6367" selection-end="6367" vertical-scroll-proportion="0.86923075" vertical-offset="2495" max-vertical-offset="3400">
-          <folding>
-            <element signature="e#589#624#0" expanded="true" />
-            <element signature="e#1073#1095#0" expanded="true" />
-            <element signature="e#1459#1483#0" expanded="true" />
-            <element signature="e#1829#1854#0" expanded="true" />
-            <element signature="e#2466#2491#0" expanded="true" />
-            <element signature="e#2940#2962#0" expanded="true" />
-            <element signature="e#3485#3513#0" expanded="true" />
-            <element signature="e#3961#3982#0" expanded="true" />
-            <element signature="e#4598#4625#0" expanded="true" />
-            <element signature="e#5036#5060#0" expanded="true" />
-            <element signature="e#5523#5551#0" expanded="true" />
-            <element signature="e#5991#6016#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
