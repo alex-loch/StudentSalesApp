@@ -31,6 +31,9 @@ public class BuyRowItem {
     /** Created Time */
     private Date creationTime;
 
+    /** Flag for no images available in the database */
+    private boolean noImages;
+
 	/**
 	 * Constructor for BuyRowItem ArrayList
 	 * 
@@ -116,5 +119,13 @@ public class BuyRowItem {
 	public String toString() {
 		return title + "\n" + desc;
 	}
+
+    public boolean isNoImages() {
+        return noImages;
+    }
+
+    public void setNoImages(boolean noImages) {
+        this.noImages = noImages;
+    }
 	
 }

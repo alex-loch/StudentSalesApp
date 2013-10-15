@@ -105,6 +105,9 @@ public class BuyListViewAdapter extends ArrayAdapter<BuyRowItem> {
         if (rowItem.getImages().size() > 0) {
             holder.pBar.setVisibility(View.INVISIBLE);
             holder.imageView.setImageBitmap(rowItem.getImages().get(0));
+        } else if (rowItem.isNoImages()) {
+            holder.pBar.setVisibility(View.INVISIBLE);
+            holder.imageView.setImageResource(R.drawable.no_image_found);
         }
 
 		return convertView;

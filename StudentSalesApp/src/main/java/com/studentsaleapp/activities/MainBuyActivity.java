@@ -1,6 +1,7 @@
 package com.studentsaleapp.activities;
 
 import java.lang.reflect.Array;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +28,7 @@ import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.assist.SimpleImageLoadingListener;
 import com.parse.Parse;
 import com.parse.ParseFile;
@@ -122,9 +124,17 @@ public class MainBuyActivity extends ListActivity {
 	}
 
     private String formatPrice(double price) {
-        StringBuffer buffer = new StringBuffer(Double.toString(price));
-        buffer.insert(0, '$');
-        return buffer.toString();
+        String buffer;
+        DecimalFormat f;
+        if (price == 0) {
+            return "Free";
+        }
+        f = new DecimalFormat("0");
+        if (price % 1 != 0) {
+            f = new DecimalFormat("0.00");
+        }
+        buffer = "$" + f.format(price);
+        return buffer;
     }
 
     private void doMySearch(String query){
@@ -245,7 +255,11 @@ public class MainBuyActivity extends ListActivity {
          * After background task has completed
          * **/
         protected void onPostExecute(String imageUri) {
-
+            if (imageUri == null) {
+                item.setNoImages(true);
+                adapter.notifyDataSetChanged();
+                return;
+            }
             DisplayImageOptions options = new DisplayImageOptions.Builder()
                     .resetViewBeforeLoading(true)  // default
                     .cacheOnDisc(true)
@@ -263,6 +277,11 @@ public class MainBuyActivity extends ListActivity {
 
                     // Update the adapter
                     adapter.notifyDataSetChanged();
+                }
+
+                public void onLoadingFailed(String imageUri, View view, FailReason failReason) {
+                    Log.e("MainBuyActivity.onPostExecute.onLoadingFailed",
+                            "Loading image failed." + failReason.toString());
                 }
             });
         }
