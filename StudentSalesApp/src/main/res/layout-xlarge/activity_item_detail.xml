@@ -2,7 +2,6 @@
 <ScrollView
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:padding="5dp"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
 <LinearLayout
@@ -38,7 +37,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textColor="#669900"
-        android:paddingTop="2dp"
+        android:paddingTop="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:text="@string/item_desctitle"/>
@@ -70,7 +69,6 @@
                 android:paddingTop="6dp"
                 android:text="@string/item_pricetitle"
                 android:textColor="#669900"
-                android:textSize="16sp"
                 android:background="@drawable/borderright"/>
 
             <TextView
@@ -80,8 +78,6 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="85dp"
                 android:layout_alignParentRight="true"
-                android:textSize="16sp"
-                android:textColor="#000000"
                 android:text="@string/item_noPrice"
                 />
 
@@ -101,7 +97,6 @@
                 android:gravity="left"
                 android:text="@string/item_creationtitle"
                 android:textColor="#669900"
-                android:textSize="16sp"
                 android:background="@drawable/borderright"
                 android:paddingTop="6dp"/>
 
@@ -114,7 +109,6 @@
                 android:text="@string/item_noTime"
                 android:paddingTop="6dp"
                 android:ellipsize="none"
-                android:textSize="16sp"
                 android:maxLength="11"/>
 
         </RelativeLayout>
@@ -131,7 +125,6 @@
             android:layout_height="30dp"
             android:layout_alignParentLeft="true"
             android:gravity="left"
-            android:textSize="16sp"
             android:paddingTop="6dp"
             android:text="@string/item_contacttitle"
             android:textColor="#669900"
@@ -144,7 +137,6 @@
             android:layout_height="30dp"
             android:layout_marginLeft="85dp"
             android:layout_alignParentRight="true"
-            android:textSize="16sp"
             android:text="@string/item_nocontact"
             />
 
@@ -158,11 +150,10 @@
         android:padding="5dp">
 
         <TextView
-            android:layout_width="78dp"
+            android:layout_width="80dp"
             android:layout_height="30dp"
             android:layout_alignParentLeft="true"
             android:gravity="left"
-            android:textSize="16sp"
             android:text="@string/item_locationtitle"
             android:textColor="#669900"
             android:paddingTop="6dp"/>
@@ -172,14 +163,13 @@
             android:minHeight="30dp"
             android:id="@+id/singleItemLocation"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="78dp"
             android:paddingLeft="5dp"
             android:layout_alignParentRight="true"
             android:text="@string/item_nolocation"
             android:paddingTop="6dp"
-            android:textSize="16sp"
             android:paddingBottom="5dp"
-            android:layout_marginStart="78dp"
-            android:layout_marginLeft="78dp"
+            android:layout_marginStart="80dp"
             android:background="@drawable/borderleft"/>
 
     </RelativeLayout>
@@ -189,21 +179,17 @@
         android:layout_height="2dp"
         android:background="@drawable/bottomborder"/>
 
-    <Button
-            android:layout_width="fill_parent"
+    <ImageButton
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/ImageButtonCallSeller"
             android:layout_gravity="left|center_vertical"
             android:layout_margin="10dp"
-            android:padding="5dp"
             android:clickable="false"
-            android:text="@string/item_call"
-            android:textColor="#FFFFFF"
+            android:src="@drawable/item_call"
             android:adjustViewBounds="true"
             android:layout_marginLeft="20dp"
-            android:onClick="callSellerButton"
-            android:background="#669900"/>
+            android:onClick="callSellerButton"/>
 
 </LinearLayout>
-
 </ScrollView>

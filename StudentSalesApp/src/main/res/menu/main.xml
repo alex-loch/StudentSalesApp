@@ -11,19 +11,12 @@
     <item
             android:id="@+id/sell_option"
             android:showAsAction="ifRoom"
-            android:icon="@drawable/actionbar_sell"
             android:title="@string/sell_option_text" />
 
     <!--  Review Option -->
     <item
             android:id="@+id/review_option"
-            android:showAsAction="never"
+            android:showAsAction="ifRoom"
             android:title="@string/review_option_text"/>
-
-    <!--  Settings Option -->
-    <item
-            android:id="@+id/settings_option"
-            android:showAsAction="never"
-            android:title="@string/settings_option_text"/>
 
 </menu>

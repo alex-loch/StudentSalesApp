@@ -1,9 +1,11 @@
 package com.studentsaleapp.backend;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import android.graphics.Bitmap;
 import android.provider.MediaStore.Images;
+import android.util.Log;
 
 public class SaleItem {
 	
@@ -15,7 +17,7 @@ public class SaleItem {
     private String location = "";
 	private double price = 0;
 	private String userID = "";
-	
+	private Date createdAt;
 	private String itemID = null;
 	private Images thumbnail;
 
@@ -24,6 +26,14 @@ public class SaleItem {
 	 */
 	public SaleItem() {
 	}
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
 
 	/**
 	 * @return the item's title

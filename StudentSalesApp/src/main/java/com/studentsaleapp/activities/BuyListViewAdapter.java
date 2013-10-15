@@ -1,7 +1,8 @@
 package com.studentsaleapp.activities;
 
+import java.text.DateFormat;
+import java.util.Date;
 import java.util.List;
-
 
 import com.studentsaleapp.activities.R;
 
@@ -43,6 +44,7 @@ public class BuyListViewAdapter extends ArrayAdapter<BuyRowItem> {
 		TextView txtPrice;
 		TextView txtContact;
 		TextView txtLocation;
+		TextView txtCreationTime;
         ProgressBar pBar;
 	}
 
@@ -88,6 +90,7 @@ public class BuyListViewAdapter extends ArrayAdapter<BuyRowItem> {
         holder.txtContact = (TextView) convertView.findViewById(R.id.contact);
         holder.txtLocation = (TextView) convertView.findViewById(R.id.location);
         holder.pBar = (ProgressBar) convertView.findViewById((R.id.pBar));
+		holder.txtCreationTime = (TextView) convertView.findViewById(R.id.creationTime);
         convertView.setTag(holder);
 		
 		// Assign values from BuyRowItem data values
@@ -96,6 +99,7 @@ public class BuyListViewAdapter extends ArrayAdapter<BuyRowItem> {
 		holder.txtPrice.setText(rowItem.getPrice());
 		holder.txtContact.setText(rowItem.getContact());
 		holder.txtLocation.setText(rowItem.getLocation());
+		holder.txtCreationTime.setText(rowItem.getCreationTime().toString());
         holder.pBar.animate();
 
         if (rowItem.getImages().size() > 0) {

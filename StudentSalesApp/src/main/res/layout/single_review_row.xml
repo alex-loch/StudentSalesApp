@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/rLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#ffffff">
+
+    <!-- Icon -->
+    <ImageView
+            android:id="@+id/reviewIcon"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:contentDescription="@string/single_image"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/imageborder"/>
+
+    <!-- Title -->
+    <TextView
+            android:id="@+id/reviewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/pBar"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="-4dp"
+            android:textColor="#333333"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textIsSelectable="false" />
+
+    <!-- Creation Time -->
+    <TextView
+            android:id="@+id/reviewCreationTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/reviewTitle"
+            android:layout_toRightOf="@id/reviewIcon"
+            android:textColor="#8A8A8A"
+            android:textSize="14sp"
+            android:maxLength="11"
+            android:ellipsize="none"/>
+
+    <Button
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_below="@id/reviewTitle"
+        android:background="@drawable/review_edit"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="-10dp"
+        android:layout_marginRight="90dp"
+        android:onClick="editItem"/>
+
+    <Button
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_below="@id/reviewTitle"
+            android:background="@drawable/review_delete"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="-10dp"
+            android:layout_marginRight="20dp"
+            android:onClick="deletItem"/>
+
+    <!-- Description -->
+    <TextView
+            android:id="@+id/reviewDesc"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/reviewTitle"
+            android:layout_marginTop="-3dp"
+            android:layout_toRightOf="@+id/reviewIcon"
+            android:layout_marginLeft="-4dp"
+            android:textColor="#8A8A8A"
+            android:textSize="16sp"
+            android:textIsSelectable="false"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:lineSpacingMultiplier="0.9"
+            android:visibility="gone"/>
+
+    <!-- Location -->
+    <TextView
+            android:id="@+id/reviewLocation"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/reviewDesc"
+            android:layout_toRightOf="@+id/reviewIcon"
+            android:layout_marginLeft="-4dp"
+            android:layout_marginTop="15dp"
+            android:textColor="#8A8A8A"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textSize="10.5sp"
+            android:visibility="gone"/>
+
+    <!-- Price -->
+    <TextView
+            android:id="@+id/reviewPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/reviewIcon"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="-20dp"
+            android:paddingBottom="2dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textAlignment="2"
+            android:textColor="#669900"
+            android:textSize="16sp"
+            android:textIsSelectable="false"
+            android:textStyle="bold"
+            android:visibility="gone"
+            />
+
+    <!-- Contact Details -->
+    <TextView
+            android:id="@+id/reviewContact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/reviewTitle"
+            android:layout_toRightOf="@+id/reviewIcon"
+            android:paddingLeft="10dp"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+    <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pBar"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="22dp"
+            android:indeterminate="true"
+            style="?android:attr/progressBarStyle"
+            android:indeterminateDrawable="@xml/progressbar"
+            android:paddingTop="9dp"
+            />
+
+</RelativeLayout>

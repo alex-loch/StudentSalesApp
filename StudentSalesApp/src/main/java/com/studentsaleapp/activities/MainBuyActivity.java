@@ -40,18 +40,6 @@ import com.studentsaleapp.backend.SaleItem;
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class MainBuyActivity extends ListActivity {
 
-	public static final String[] location = new String[] {
-		"St. Lucia",
-		"Toowong",
-		"Auchenflower",
-		"Beenleigh",
-		"Brisbane CBD",
-		"South Bank",
-		"West End",
-		"Nerang"
-	};
-	/** ----- end static data -----*/
-
 	/** The row of items list */
 	private ArrayList<BuyRowItem> rowItems;
 
@@ -96,6 +84,7 @@ public class MainBuyActivity extends ListActivity {
 		String price = ((TextView) view.findViewById(R.id.price)).getText().toString();
 		String contact = ((TextView) view.findViewById(R.id.contact)).getText().toString();
 		String location = ((TextView) view.findViewById(R.id.location)).getText().toString();
+        String createdAt = ((TextView) view.findViewById(R.id.creationTime)).getText().toString();
 
 		// Create, populate and start the single item activity
 		Intent singleItem = new Intent(this, SingleBuyListItemActivity.class);
@@ -105,6 +94,7 @@ public class MainBuyActivity extends ListActivity {
 		singleItem.putExtra("contact", contact);
 		singleItem.putExtra("location", location);
 		singleItem.putExtra("iconimages", iconimages);
+        singleItem.putExtra("creationTime", createdAt);
 		startActivity(singleItem);
 	}
 
@@ -190,8 +180,9 @@ public class MainBuyActivity extends ListActivity {
                         item.getDescription(),
                         formatPrice(item.getPrice()),
                         item.getContact(),
-                        location[temp_counter % location.length],
-                        item.getItemID()
+                        item.getLocationString(),
+                        item.getItemID(),
+						item.getCreatedAt()
                 ));
                 temp_counter++;
             }
