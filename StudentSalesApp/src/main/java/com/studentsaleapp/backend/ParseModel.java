@@ -65,7 +65,7 @@ public class ParseModel implements BackendModel {
 	 * @return a list of SaleItems matching query
 	 */
 	private ArrayList<SaleItem> itemQuery(ParseQuery query) {
-		return this.itemQuery(query, 0.0, 0.0, BEST_MATCH);
+		return this.itemQuery(query, 0.0, 0.0, DISTANCE);
 	}
 
 	/**
@@ -117,7 +117,8 @@ public class ParseModel implements BackendModel {
 
             case DISTANCE:
                 ParseGeoPoint here = new ParseGeoPoint(latitude, longitude);
-                query.whereNear("location", here);
+                query.whereNear("coordinates", here);
+                query.whereWithinKilometers("coordinates", here, 20.0);
                 break;
             case HIGHEST_PRICE:
                 query.addDescendingOrder("price");
@@ -318,7 +319,7 @@ public class ParseModel implements BackendModel {
 		double latitude = 0.0;
 		double longitude = 0.0;
 		int start = 0;
-		int sortMethod = BEST_MATCH;
+		int sortMethod = DISTANCE;
 		return this.getItemList(searchQuery, latitude, longitude, start, sortMethod);
 	}
 
@@ -327,7 +328,7 @@ public class ParseModel implements BackendModel {
 		String searchQuery = "";
 		double latitude = 0.0;
 		double longitude = 0.0;
-		int sortMethod = BEST_MATCH;
+		int sortMethod = DISTANCE;
 		return this.getItemList(searchQuery, latitude, longitude, start, sortMethod);
 	}
 
@@ -340,7 +341,7 @@ public class ParseModel implements BackendModel {
 		query.setSkip(start);
 		query.setLimit(20);
 		
-		return this.itemQuery(query, latitude, longitude, BEST_MATCH);
+		return this.itemQuery(query, latitude, longitude, sortMethod);
 	}
 	
 	@Override
