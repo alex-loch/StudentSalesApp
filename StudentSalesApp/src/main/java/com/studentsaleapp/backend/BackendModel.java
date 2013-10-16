@@ -27,10 +27,10 @@ public interface BackendModel {
 	 *  
 	 * Currently this method will log an error to the debug console
 	 * if this fails, but it would be nice to return an error value.
-	 * 
-	 * @param item the item to be added
-	 */
-	public void addItem(SaleItem item, ArrayList<Bitmap> images);
+	 *
+     * @param item the item to be added
+     */
+	public ParseObject addItem(SaleItem item, ArrayList<Bitmap> images);
 
 	/**
 	 * Finds the item in the database with the same itemID as item,

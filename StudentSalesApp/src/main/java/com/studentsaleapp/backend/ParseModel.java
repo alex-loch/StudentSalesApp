@@ -240,12 +240,14 @@ public class ParseModel implements BackendModel {
 		o.put("userid", s.getUserID());
 	}
 
-	public void addItem(SaleItem item, ArrayList<Bitmap> images) {
+	public ParseObject addItem(SaleItem item, ArrayList<Bitmap> images) {
 		ParseObject saleItemObject = new ParseObject("SaleItem");
         ParseObject imagesObject = new ParseObject("SaleItemImages");
 
 		this.fillParseObject(item, saleItemObject);
-        this.setItemImages(item, images, imagesObject);
+        if (images != null) {
+            this.setItemImages(item, images, imagesObject);
+        }
 
 		try {
 			saleItemObject.save();
@@ -255,10 +257,31 @@ public class ParseModel implements BackendModel {
             relation.add(imagesObject);
             saleItemObject.saveInBackground();
 		} catch (ParseException e) {
-			Log.e("ParseModel.addItem", e.toString());	
+			Log.e("ParseModel.addItem", e.toString());
 		}
 		item.setItemID(saleItemObject.getObjectId());
+        return imagesObject;
 	}
+
+    @Override
+    public void setItemImages(SaleItem item, List<Bitmap> images, ParseObject o) {
+        String[] imageKeys = {"imageOne", "imageTwo", "imageThree"};
+
+        if (images == null || images.size() == 0) {
+            return;
+        }
+        for (int i = 0; i < images.size(); i++) {
+            if (images.get(i) == null) {
+                continue;
+            }
+            o.put(imageKeys[i], bitmapToParseFile(images.get(i)));
+        }
+        try {
+            o.save();
+        } catch (ParseException e) {
+            Log.e("ParseModel.addItem", e.toString());
+        }
+    }
 
 	@Override
 	public void updateItem(SaleItem item) {
@@ -287,40 +310,6 @@ public class ParseModel implements BackendModel {
 		}
 		
 		return allImages;
-	}
-
-	@Override
-	public void setItemImages(SaleItem item, List<Bitmap> images, ParseObject o) {
-
-		for (Bitmap i : images) {
-			// Add images to Parse
-            ParseFile imageOne;
-            ParseFile imageTwo;
-            ParseFile imageThree;
-            switch(images.size()) {
-                case 1:
-                    imageOne = bitmapToParseFile(images.get(0));
-                    o.put("imageOne", imageOne);
-                    break;
-                case 2:
-                    imageOne = bitmapToParseFile(images.get(0));
-                    o.put("imageOne", imageOne);
-
-                    imageTwo = bitmapToParseFile(images.get(1));
-                    o.put("imageTwo", imageTwo);
-                    break;
-                case 3:
-                    imageOne = bitmapToParseFile(images.get(0));
-                    o.put("imageOne", imageOne);
-
-                    imageTwo = bitmapToParseFile(images.get(1));
-                    o.put("imageTwo", imageTwo);
-
-                    imageThree = bitmapToParseFile(images.get(2));
-                    o.put("imageThree", imageThree);
-                    break;
-            }
-		}
 	}
 
 	@Override

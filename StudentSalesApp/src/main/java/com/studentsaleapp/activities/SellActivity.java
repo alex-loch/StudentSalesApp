@@ -7,6 +7,7 @@ import java.util.List;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -23,6 +24,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.Menu;
@@ -34,6 +36,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.parse.ParseObject;
 import com.studentsaleapp.activities.R;
 
 import com.studentsaleapp.backend.ParseModel;
@@ -215,10 +218,10 @@ public class SellActivity extends Activity {
 						// Extract only the bitmap dimensions
 						String currentFile = mImagePaths.get(currentImage).toString();
 						BitmapFactory.Options bitmapFactoryOptions = new BitmapFactory.Options();
-						bitmapFactoryOptions.inJustDecodeBounds = false;
+						bitmapFactoryOptions.inJustDecodeBounds = true;
 						Bitmap currentBitmap = BitmapFactory.decodeFile(currentFile, bitmapFactoryOptions);
                         // Add the bitmap to the array
-                        mImageBitmaps.add(currentBitmap);
+                        // mImageBitmaps.add(currentBitmap);
 						
 						// Calculate the height and width ratios
 						int ratioHeight = (int) Math.ceil(bitmapFactoryOptions.outHeight / requiredHeight);
@@ -234,6 +237,7 @@ public class SellActivity extends Activity {
 						}
 						
 						// Extract the resized bitmap
+                        bitmapFactoryOptions.inJustDecodeBounds = false;
 						currentBitmap = BitmapFactory.decodeFile(currentFile, bitmapFactoryOptions);
 
 						// Display the image in the image view
@@ -249,6 +253,12 @@ public class SellActivity extends Activity {
 	}
 	
 	public void buttonSellItem(View button) {
+        ProgressDialog pDialog = new ProgressDialog(SellActivity.this);
+        pDialog.setMessage("Uploading item...");
+        pDialog.setIndeterminate(false);
+        pDialog.setCancelable(false);
+        pDialog.show();
+
 		// Get the field handles
 		final EditText titleTextField = (EditText) findViewById(R.id.titleTextField);  
 		final EditText descriptionTextField = (EditText) findViewById(R.id.descriptionTextField);  
@@ -303,7 +313,36 @@ public class SellActivity extends Activity {
 		
         // Add the item to the backend model and finish
 		ParseModel model = new ParseModel(getApplicationContext());
-		model.addItem(saleItem, mImageBitmaps);
+        ParseObject imageObject = model.addItem(saleItem, null);
+
+        ArrayList<Bitmap> imagesToAdd;
+        for (int i = 0; i < mImagePaths.size(); i++) {
+            BitmapFactory.Options bitmapFactoryOptions = new BitmapFactory.Options();
+            bitmapFactoryOptions.inJustDecodeBounds = true;
+            BitmapFactory.decodeFile(mImagePaths.get(i).getAbsolutePath(), bitmapFactoryOptions);
+
+            int requiredHeight = 600;
+            int requiredWidth = 800;
+            int ratioHeight = (int) Math.ceil(bitmapFactoryOptions.outHeight / requiredHeight);
+            int ratioWidth = (int) Math.ceil(bitmapFactoryOptions.outWidth / requiredWidth);
+
+            if (ratioHeight > 1 || ratioWidth > 1) {
+                if (ratioHeight >= ratioWidth) {
+                    bitmapFactoryOptions.inSampleSize = ratioHeight;
+                } else {
+                    bitmapFactoryOptions.inSampleSize = ratioWidth;
+                }
+            }
+            bitmapFactoryOptions.inJustDecodeBounds = false;
+            imagesToAdd = new ArrayList<Bitmap>();
+            for (int j = 0; j <= i; j++) {
+                imagesToAdd.add(j == i ? BitmapFactory.decodeFile(
+                        mImagePaths.get(i).getAbsolutePath(), bitmapFactoryOptions) : null);
+            }
+
+            model.setItemImages(saleItem, imagesToAdd, imageObject);
+            //mImageBitmaps.add(BitmapFactory.decodeFile(mImagePaths.get(i).getAbsolutePath(), bitmapFactoryOptions));
+        }
 		finish();
 	}
 	
@@ -334,6 +373,9 @@ public class SellActivity extends Activity {
         String deviceID;
         TelephonyManager teleManager = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
         deviceID = teleManager.getDeviceId();
+        if (deviceID == null) {
+            deviceID = Settings.Secure.ANDROID_ID;
+        }
         return deviceID;
     }
 
