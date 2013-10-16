@@ -26,7 +26,7 @@ public class MainApplication extends Application {
 		super.onCreate();
 
         File cacheDir = StorageUtils.getCacheDirectory(getApplicationContext());
-        // Create global configuration and initialize ImageLoader with this configuration
+        // Create global configuration and initialize ImageGrabber with this configuration
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(getApplicationContext())
         .discCache(new UnlimitedDiscCache(cacheDir)) // default
         .discCacheSize(50 * 1024 * 1024)

@@ -77,6 +77,8 @@ public class SellActivity extends Activity {
 	
 	/** The location manager */
 	private LocationManager locationManager;
+
+    private ProgressDialog pDialog;
 	
 	/** The backend model */
 	//TODO: The backend model is currently not in use
@@ -253,7 +255,7 @@ public class SellActivity extends Activity {
 	}
 	
 	public void buttonSellItem(View button) {
-        ProgressDialog pDialog = new ProgressDialog(SellActivity.this);
+        pDialog = new ProgressDialog(SellActivity.this);
         pDialog.setMessage("Uploading item...");
         pDialog.setIndeterminate(false);
         pDialog.setCancelable(false);
@@ -371,8 +373,8 @@ public class SellActivity extends Activity {
      */
     private String getDeviceID() {
         String deviceID;
-        TelephonyManager teleManager = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
-        deviceID = teleManager.getDeviceId();
+        TelephonyManager telephonyManager = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
+        deviceID = telephonyManager.getDeviceId();
         if (deviceID == null) {
             deviceID = Settings.Secure.ANDROID_ID;
         }

@@ -1,6 +1,5 @@
 package com.studentsaleapp.activities;
 
-import java.lang.reflect.Array;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,14 +22,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.SearchView;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.FailReason;
+import com.nostra13.universalimageloader.core.assist.ImageSize;
 import com.nostra13.universalimageloader.core.assist.SimpleImageLoadingListener;
-import com.parse.Parse;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
@@ -203,17 +201,17 @@ public class MainBuyActivity extends ListActivity {
             setListAdapter(adapter);
 
             for (BuyRowItem item: rowItems) {
-               new getImages(mContext, item, model).execute();
+               new ImageGrabber(mContext, item, model).execute();
             }
 
         }
     }
 
-    class getImages extends AsyncTask<Void, Void, String> {
+    class ImageGrabber extends AsyncTask<Void, Void, String> {
         private Context mContext;
         private BuyRowItem item;
 
-        public getImages (Context mContext, BuyRowItem item, BackendModel model){
+        public ImageGrabber(Context mContext, BuyRowItem item, BackendModel model){
             this.mContext = mContext;
             this.item = item;
         }
@@ -260,14 +258,18 @@ public class MainBuyActivity extends ListActivity {
                 adapter.notifyDataSetChanged();
                 return;
             }
+            ImageSize targetSize = new ImageSize(96,128);
             DisplayImageOptions options = new DisplayImageOptions.Builder()
                     .resetViewBeforeLoading(true)  // default
+                    .cacheInMemory(true)
                     .cacheOnDisc(true)
+                    .showImageForEmptyUri(R.drawable.no_image_found)
+                    .showImageOnFail(R.drawable.no_image_found)
                     .build();
             ImageLoader imageLoader = ImageLoader.getInstance();
 
             // Load image, decode it to Bitmap and return Bitmap to callback
-            imageLoader.loadImage(imageUri, options, new SimpleImageLoadingListener() {
+            imageLoader.loadImage(imageUri, targetSize, options, new SimpleImageLoadingListener() {
                 @Override
                 public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
                     // Do whatever you want with Bitmap
