@@ -9,50 +9,38 @@ import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseRelation;
-import com.studentsaleapp.activities.R;
-import com.studentsaleapp.backend.BackendModel;
 
 import android.graphics.BitmapFactory;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.app.Activity;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewParent;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.support.v4.app.NavUtils;
 import android.annotation.TargetApi;
 import android.content.Intent;
 import android.os.Build;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class SingleBuyListItemActivity extends FragmentActivity {
 
-    private TextView txtProduct;
     PagerAdapter mPagerAdapter;
     ViewPager mViewPager;
     ArrayList<Bitmap> imageArray = new ArrayList<Bitmap>();
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -88,7 +76,7 @@ public class SingleBuyListItemActivity extends FragmentActivity {
 
         if (!(isNoImages)) {
             // Get item images
-            new ImageGrabber(itemID).execute();
+            new ImageGrabber(itemID).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
         }
 
         // ViewPager and its adapters use support library
@@ -111,6 +99,7 @@ public class SingleBuyListItemActivity extends FragmentActivity {
             findViewById(R.id.ImageButtonCallSeller).setClickable(true);
         }
 	}
+
 
     /** Calls the users selling the currently selected items onClick */
     public void callSellerButton(View Button){
@@ -202,6 +191,8 @@ public class SingleBuyListItemActivity extends FragmentActivity {
             return rootView;
 
         }
+
+
     }
 
     class ImageGrabber extends AsyncTask<Void, Void, String> {
@@ -265,7 +256,16 @@ public class SingleBuyListItemActivity extends FragmentActivity {
                 @Override
                 public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
                     imageArray.add(loadedImage);
-                    mViewPager.setAdapter(mPagerAdapter);
+
+                    /*
+                     * Shitty workaround to exception thrown when back button
+                     * is pressed too quickly after activity creation
+                     */
+                    try {
+                        mViewPager.setAdapter(mPagerAdapter);
+                    } catch(IllegalStateException e) {
+                        e.printStackTrace();
+                    }
                 }
 
                 public void onLoadingFailed(String imageUri, View view, FailReason failReason) {
@@ -275,5 +275,4 @@ public class SingleBuyListItemActivity extends FragmentActivity {
             });
         }
     }
-
 }

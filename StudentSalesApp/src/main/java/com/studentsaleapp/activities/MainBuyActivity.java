@@ -1,6 +1,5 @@
 package com.studentsaleapp.activities;
 
-import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +19,6 @@ import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -89,7 +87,6 @@ public class MainBuyActivity extends ListActivity {
 	public void onListItemClick(ListView parent, View view, int position, long id) {
 
 		// Get the item values
-		final int iconimages = 0; //images[position];
 		String product = ((TextView) view.findViewById(R.id.title)).getText().toString();
 		String desc = ((TextView) view.findViewById(R.id.desc)).getText().toString();
 		String price = ((TextView) view.findViewById(R.id.price)).getText().toString();
@@ -125,8 +122,6 @@ public class MainBuyActivity extends ListActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		super.onOptionsItemSelected(item);
 		switch(item.getItemId()) {
-			/*case R.id.buy_option:
-				return true;*/
 			case R.id.sell_option:
 				Intent sellIntent = new Intent(this, SellActivity.class);
 				startActivity(sellIntent);
@@ -138,6 +133,8 @@ public class MainBuyActivity extends ListActivity {
 		}
 		return (super.onOptionsItemSelected(item));
 	}
+
+
 
     private String formatPrice(double price) {
         String buffer;
@@ -220,8 +217,6 @@ public class MainBuyActivity extends ListActivity {
         protected void onPostExecute(String file_url) {
             pDialog.cancel();
 
-            // Temporary counter to go through static data as images & locations not yet in database.
-            int temp_counter = 0;
             for (SaleItem item : fetchedRowItems) {
                 rowItems.add(new BuyRowItem(
                         item.getTitle(),
@@ -232,7 +227,6 @@ public class MainBuyActivity extends ListActivity {
                         item.getItemID(),
 						item.getCreatedAt()
                 ));
-                temp_counter++;
             }
 
             // Setup the adapter
@@ -241,18 +235,16 @@ public class MainBuyActivity extends ListActivity {
             setListAdapter(adapter);
 
             for (BuyRowItem item: rowItems) {
-               new ImageGrabber(mContext, item, model).execute();
+               new ImageGrabber(item).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
             }
 
         }
     }
 
     class ImageGrabber extends AsyncTask<Void, Void, String> {
-        private Context mContext;
         private BuyRowItem item;
 
-        public ImageGrabber(Context mContext, BuyRowItem item, BackendModel model){
-            this.mContext = mContext;
+        public ImageGrabber(BuyRowItem item){
             this.item = item;
         }
 
