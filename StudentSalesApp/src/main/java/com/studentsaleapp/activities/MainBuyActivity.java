@@ -55,8 +55,6 @@ public class MainBuyActivity extends ListActivity {
 
     private BuyListViewAdapter adapter;
 
-    private Handler handler;
-
     private LocationManager locationManager;
 
 	@SuppressLint("NewApi")
@@ -98,6 +96,8 @@ public class MainBuyActivity extends ListActivity {
 		String contact = ((TextView) view.findViewById(R.id.contact)).getText().toString();
 		String location = ((TextView) view.findViewById(R.id.location)).getText().toString();
         String createdAt = ((TextView) view.findViewById(R.id.creationTime)).getText().toString();
+        String itemID = rowItems.get(position).getItemID();
+        boolean isNoImages = rowItems.get(position).isNoImages();
 
 		// Create, populate and start the single item activity
 		Intent singleItem = new Intent(this, SingleBuyListItemActivity.class);
@@ -106,8 +106,9 @@ public class MainBuyActivity extends ListActivity {
 		singleItem.putExtra("price", price);
 		singleItem.putExtra("contact", contact);
 		singleItem.putExtra("location", location);
-		singleItem.putExtra("iconimages", iconimages);
         singleItem.putExtra("creationTime", createdAt);
+        singleItem.putExtra("itemID", itemID);
+        singleItem.putExtra("isNoImages", isNoImages);
 		startActivity(singleItem);
 	}
 

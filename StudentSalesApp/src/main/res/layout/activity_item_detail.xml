@@ -11,13 +11,12 @@
               android:orientation="vertical" >
 
     <!-- Main Item Image -->
-    <ImageView
-        android:id="@+id/imageView1"
+    <android.support.v4.view.ViewPager
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@id/item_gallery"
         android:layout_width="250dp"
         android:layout_height="250dp"
-        android:layout_gravity="center"
-        android:contentDescription="@string/item_imageViewDescription"
-        />
+        android:layout_gravity="center" />
 
     <!-- Item Title -->
     <TextView
