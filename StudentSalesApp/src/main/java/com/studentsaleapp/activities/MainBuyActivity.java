@@ -10,6 +10,7 @@ import android.annotation.TargetApi;
 import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.app.SearchManager;
+import android.app.ActionBar;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -69,6 +70,10 @@ public class MainBuyActivity extends ListActivity {
 
         Intent i = getIntent();
         String query = i.getStringExtra("query");
+        if (query != null) {
+            ActionBar actionBar = getActionBar();
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
         new getListings(this.getApplicationContext(), query).execute();
 
         // Get the intent, verify the action and get the query
@@ -125,6 +130,10 @@ public class MainBuyActivity extends ListActivity {
 				Intent sellIntent = new Intent(this, SellActivity.class);
 				startActivity(sellIntent);
 				return true;
+            case android.R.id.home:
+                Intent goHome = new Intent(this, MainBuyActivity.class);
+                startActivity(goHome);
+                return true;
 		}
 		return (super.onOptionsItemSelected(item));
 	}

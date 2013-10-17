@@ -3,6 +3,7 @@ package com.studentsaleapp.backend;
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 //import android.os.Parcel;
 //import android.os.Parcelable;
@@ -337,7 +338,8 @@ public class ParseModel implements BackendModel {
 			double longitude, int start, int sortMethod) {
 
 		ParseQuery query = new ParseQuery("SaleItem");
-		query.whereContains("title", searchQuery);
+        String regex = Pattern.quote(searchQuery);
+        query.whereMatches("title", regex, "i");
 		query.setSkip(start);
 		query.setLimit(20);
 		
