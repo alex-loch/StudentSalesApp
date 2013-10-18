@@ -20,7 +20,7 @@
     <!-- Title -->
     <TextView
             android:id="@+id/reviewTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/pBar"
             android:layout_marginTop="10dp"
@@ -28,11 +28,13 @@
             android:textColor="#333333"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textIsSelectable="false" />
+            android:textIsSelectable="false"
+            android:maxLines="1"
+            android:ellipsize="end"/>
 
-    <!-- Creation Time -->
+    <!-- Place holder -->
     <TextView
-            android:id="@+id/reviewCreationTime"
+            android:id="@+id/reviewPostedOn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/reviewTitle"
@@ -40,22 +42,35 @@
             android:textColor="#8A8A8A"
             android:textSize="14sp"
             android:maxLength="11"
+            android:ellipsize="none"
+            android:text="Posted On:"/>
+
+    <!-- Creation Time -->
+    <TextView
+            android:id="@+id/reviewCreationTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/reviewTitle"
+            android:layout_toRightOf="@id/reviewPostedOn"
+            android:textColor="#8A8A8A"
+            android:textSize="14sp"
+            android:maxLength="11"
             android:ellipsize="none"/>
 
     <Button
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_below="@id/reviewTitle"
-        android:background="@drawable/review_edit"
         android:id="@+id/reviewEdit"
+        android:background="@drawable/review_edit"
         android:layout_alignParentRight="true"
         android:layout_marginTop="-10dp"
         android:layout_marginRight="90dp"
         android:onClick="buttonEditItem"/>
 
     <Button
-            android:layout_width="45dp"
-            android:layout_height="45dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_below="@id/reviewTitle"
             android:background="@drawable/review_delete"
             android:id="@+id/reviewDelete"

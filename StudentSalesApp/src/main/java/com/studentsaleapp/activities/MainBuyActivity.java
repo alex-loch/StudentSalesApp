@@ -75,8 +75,10 @@ public class MainBuyActivity extends ListActivity {
         if (query != null || userID != null) {
             ActionBar actionBar = getActionBar();
             actionBar.setDisplayHomeAsUpEnabled(true);
+			setTitle("Searching For: " + query);
             if (userID != null && !userID.isEmpty()) {
                 reviewMode = true;
+                setTitle("Your Items");
                 query = "userID:" + userID;
             }
         }

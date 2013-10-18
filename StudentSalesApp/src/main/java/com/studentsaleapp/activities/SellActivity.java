@@ -256,11 +256,6 @@ public class SellActivity extends Activity {
 	}
 	
 	public void buttonSellItem(View button) {
-        pDialog = new ProgressDialog(SellActivity.this);
-        pDialog.setMessage("Uploading item...");
-        pDialog.setIndeterminate(false);
-        pDialog.setCancelable(false);
-
 		// Get the field handles
 		final EditText titleTextField = (EditText) findViewById(R.id.titleTextField);  
 		final EditText descriptionTextField = (EditText) findViewById(R.id.descriptionTextField);  
@@ -296,12 +291,7 @@ public class SellActivity extends Activity {
             }
             return;
         }
-
-        Button sellButton = ((Button)findViewById(R.id.ButtonSellItem));
         button.setEnabled(false);
-        button.setBackgroundColor(Color.GRAY);
-
-        pDialog.show();
 
 		// Create the sale item and add the fields
 		SaleItem saleItem = new SaleItem();

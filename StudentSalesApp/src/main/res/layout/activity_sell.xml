@@ -31,7 +31,7 @@
                 android:hint="@string/sell_titleHint"
                 android:inputType="textCapWords"
                 android:maxLines="1"
-                android:maxLength="20">
+                android:maxLength="50">
 
         </EditText>
         <TextView
@@ -103,7 +103,7 @@
 
         </LinearLayout>
 
-        <LinearLayout
+        <RelativeLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -111,9 +111,10 @@
 
             <ImageView
                     android:id="@+id/photoView1"
+                    android:layout_alignParentLeft="true"
                     android:layout_width="96dp"
                     android:layout_height="128dp"
-                    android:layout_margin="1dp"
+                    android:layout_marginLeft="10dp"
                     android:contentDescription="@string/sell_photoViewDescription"
                     android:src="@drawable/sell_image"
                     android:onClick="takePhoto"/>
@@ -121,6 +122,7 @@
             <ImageView
                     android:id="@+id/photoView2"
                     android:layout_width="96dp"
+                    android:layout_centerHorizontal="true"
                     android:layout_height="128dp"
                     android:layout_margin="1dp"
                     android:contentDescription="@string/sell_photoViewDescription"
@@ -131,11 +133,12 @@
                     android:id="@+id/photoView3"
                     android:layout_width="96dp"
                     android:layout_height="128dp"
-                    android:layout_margin="1dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_alignParentRight="true"
                     android:contentDescription="@string/sell_photoViewDescription"
                     android:src="@drawable/sell_image"
                     android:onClick="takePhoto"/>
-        </LinearLayout>
+        </RelativeLayout>
 
         <!-- Phone Number -->
         <TextView
@@ -180,11 +183,11 @@
         <Button
                 android:id="@+id/ButtonSellItem"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:onClick="buttonSellItem"
                 android:text="@string/sell_button_item"
                 android:textColor="#ffffff"
-                android:background="#669900"
+                android:background="@drawable/custombutton"
                 android:layout_marginTop="8dp">
         </Button>
     </LinearLayout>

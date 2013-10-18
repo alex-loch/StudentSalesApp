@@ -3,7 +3,7 @@
                 android:id="@+id/rLayout"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:background="#ffffff">
+                android:background="@drawable/custombutton">
 
     <!-- Icon -->
     <ImageView
@@ -20,7 +20,7 @@
     <!-- Title -->
     <TextView
             android:id="@+id/title"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/pBar"
             android:layout_marginTop="10dp"
@@ -28,6 +28,8 @@
             android:textColor="#333333"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:ellipsize="end"
+            android:singleLine="true"
             android:textIsSelectable="false" />
 
     <!-- Description -->
