@@ -19,6 +19,8 @@ import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -55,6 +57,8 @@ public class MainBuyActivity extends ListActivity {
 
     private LocationManager locationManager;
 
+    private boolean reviewMode = false;
+
 	@SuppressLint("NewApi")
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	@Override
@@ -66,9 +70,15 @@ public class MainBuyActivity extends ListActivity {
 
         Intent i = getIntent();
         String query = i.getStringExtra("query");
-        if (query != null) {
+        String userID = i.getStringExtra("userID");
+
+        if (query != null || userID != null) {
             ActionBar actionBar = getActionBar();
             actionBar.setDisplayHomeAsUpEnabled(true);
+            if (userID != null && !userID.isEmpty()) {
+                reviewMode = true;
+                query = "userID:" + userID;
+            }
         }
         new getListings(this.getApplicationContext(), query).execute();
 
@@ -76,8 +86,9 @@ public class MainBuyActivity extends ListActivity {
         Intent intent = getIntent();
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             String searchQuery = intent.getStringExtra(SearchManager.QUERY);
-            doMySearch(searchQuery);
+            doSearch(searchQuery);
         }
+
 	}
 
 	/**
@@ -130,11 +141,29 @@ public class MainBuyActivity extends ListActivity {
                 Intent goHome = new Intent(this, MainBuyActivity.class);
                 startActivity(goHome);
                 return true;
+            case R.id.review_option:
+                Intent reviewIntent = new Intent(this, MainBuyActivity.class);
+                reviewIntent.putExtra("userID", getDeviceID());
+                startActivity(reviewIntent);
+                return true;
 		}
 		return (super.onOptionsItemSelected(item));
 	}
 
 
+    /**
+     * Get and return the unique device ID
+     * @return - the device ID as a String
+     */
+    private String getDeviceID() {
+        String deviceID;
+        TelephonyManager telephonyManager = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
+        deviceID = telephonyManager.getDeviceId();
+        if (deviceID == null) {
+            deviceID = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+        }
+        return deviceID;
+    }
 
     private String formatPrice(double price) {
         String buffer;
@@ -150,8 +179,7 @@ public class MainBuyActivity extends ListActivity {
         return buffer;
     }
 
-    private void doMySearch(String query){
-
+    private void doSearch(String query){
         Intent search = new Intent(this, MainBuyActivity.class);
         search.putExtra("query", query);
         startActivity(search);
@@ -203,11 +231,15 @@ public class MainBuyActivity extends ListActivity {
 
             // Set empty string is string is null (i.e. initial loading of app)
             if (mQuery == null) {
-                mQuery = "";
+                fetchedRowItems = model.getItemList("", mLocation.getLatitude(),
+                        mLocation.getLongitude(), 0, BackendModel.DISTANCE);
+            } else if (mQuery.startsWith("userID")) {
+                String q = mQuery.substring(mQuery.indexOf(":")+1);
+                fetchedRowItems = model.getItemListByUser(q);
+            } else {
+                fetchedRowItems = model.getItemList(mQuery, mLocation.getLatitude(),
+                        mLocation.getLongitude(), 0, BackendModel.DISTANCE);
             }
-            fetchedRowItems = model.getItemList(mQuery, mLocation.getLatitude(),
-                    mLocation.getLongitude(), 0, BackendModel.DISTANCE);
-
             return null;
         }
 
@@ -217,6 +249,10 @@ public class MainBuyActivity extends ListActivity {
         protected void onPostExecute(String file_url) {
             pDialog.cancel();
 
+            // If no items available just leave
+            if (fetchedRowItems == null) {
+                return;
+            }
             for (SaleItem item : fetchedRowItems) {
                 rowItems.add(new BuyRowItem(
                         item.getTitle(),
@@ -230,8 +266,13 @@ public class MainBuyActivity extends ListActivity {
             }
 
             // Setup the adapter
-            adapter = new BuyListViewAdapter(mContext,
-                    R.layout.single_buy_row, rowItems);
+            if (reviewMode) {
+                adapter = new BuyListViewAdapter(mContext,
+                        R.layout.single_review_row, rowItems, true);
+            } else {
+                adapter = new BuyListViewAdapter(mContext,
+                        R.layout.single_buy_row, rowItems, false);
+            }
             setListAdapter(adapter);
 
             for (BuyRowItem item: rowItems) {

@@ -10,6 +10,7 @@ import com.studentsaleapp.backend.ParseModel;
 
 import android.app.Application;
 import android.util.Log;
+import android.view.View;
 
 import java.io.File;
 
@@ -35,7 +36,6 @@ public class MainApplication extends Application {
 
         ImageLoader.getInstance().init(config);
 
-
 		model = new ParseModel(this);
 		Log.i(TAG, "Backend ParseModel created");
 	}
@@ -48,5 +48,12 @@ public class MainApplication extends Application {
 	protected BackendModel getBackendModel() {
 		return model;
 	}
-	
+
+    public void buttonDeleteItem(View button) {
+        Log.e("MainBuyActivity.buttonDeleteItem", "NYYIIIGEYAAAAH");
+    }
+
+    public void buttonEditItem(View button) {
+        Log.e("MainBuyActivity.buttonEditItem", "SPIKY NIPPLES (* )( *)");
+    }
 }

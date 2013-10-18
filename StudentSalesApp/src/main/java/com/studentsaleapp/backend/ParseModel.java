@@ -66,7 +66,7 @@ public class ParseModel implements BackendModel {
 	 * @return a list of SaleItems matching query
 	 */
 	private ArrayList<SaleItem> itemQuery(ParseQuery query) {
-		return this.itemQuery(query, 0.0, 0.0, DISTANCE);
+		return this.itemQuery(query, 0.0, 0.0, BEST_MATCH);
 	}
 
 	/**

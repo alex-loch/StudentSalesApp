@@ -14,6 +14,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -259,7 +260,6 @@ public class SellActivity extends Activity {
         pDialog.setMessage("Uploading item...");
         pDialog.setIndeterminate(false);
         pDialog.setCancelable(false);
-        pDialog.show();
 
 		// Get the field handles
 		final EditText titleTextField = (EditText) findViewById(R.id.titleTextField);  
@@ -296,6 +296,12 @@ public class SellActivity extends Activity {
             }
             return;
         }
+
+        Button sellButton = ((Button)findViewById(R.id.ButtonSellItem));
+        button.setEnabled(false);
+        button.setBackgroundColor(Color.GRAY);
+
+        pDialog.show();
 
 		// Create the sale item and add the fields
 		SaleItem saleItem = new SaleItem();
@@ -376,7 +382,7 @@ public class SellActivity extends Activity {
         TelephonyManager telephonyManager = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
         deviceID = telephonyManager.getDeviceId();
         if (deviceID == null) {
-            deviceID = Settings.Secure.ANDROID_ID;
+            deviceID = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
         }
         return deviceID;
     }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/rLayout"
+                android:id="@+id/reviewLayout"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:background="#ffffff">
@@ -47,20 +47,22 @@
         android:layout_height="45dp"
         android:layout_below="@id/reviewTitle"
         android:background="@drawable/review_edit"
+        android:id="@+id/reviewEdit"
         android:layout_alignParentRight="true"
         android:layout_marginTop="-10dp"
         android:layout_marginRight="90dp"
-        android:onClick="editItem"/>
+        android:onClick="buttonEditItem"/>
 
     <Button
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_below="@id/reviewTitle"
             android:background="@drawable/review_delete"
+            android:id="@+id/reviewDelete"
             android:layout_alignParentRight="true"
             android:layout_marginTop="-10dp"
             android:layout_marginRight="20dp"
-            android:onClick="deletItem"/>
+            android:onClick="buttonDeleteItem"/>
 
     <!-- Description -->
     <TextView
