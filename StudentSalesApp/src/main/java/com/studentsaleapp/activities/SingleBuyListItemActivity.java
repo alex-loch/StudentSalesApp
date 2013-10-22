@@ -142,7 +142,8 @@ public class SingleBuyListItemActivity extends FragmentActivity {
         public Fragment getItem(int i) {
             Fragment fragment = new ImageObjectFragment();
             Bundle args = new Bundle();
-            args.putInt(ImageObjectFragment.ARG_OBJECT, i);
+            Log.d("imageArray getItem:", String.valueOf(i));
+            args.putInt("ARG_OBJECT", i);
             fragment.setArguments(args);
             return fragment;
         }
@@ -165,8 +166,6 @@ public class SingleBuyListItemActivity extends FragmentActivity {
     // Instances of this class are fragments representing a single
 // object in our collection.
     public class ImageObjectFragment extends Fragment {
-        public static final String ARG_OBJECT = "object";
-
         @Override
         public View onCreateView(LayoutInflater inflater,
                                  ViewGroup container, Bundle savedInstanceState) {
@@ -180,6 +179,7 @@ public class SingleBuyListItemActivity extends FragmentActivity {
             ImageView imageView = (ImageView) rootView.findViewById(R.id.item_gallery);
 
             if (imageArray.size() > 0) {
+                Log.d("imageArray i:", String.valueOf(i));
                 imageView.setImageBitmap(imageArray.get(i));
             } else {
                 // Insert image to indicate no images present
@@ -195,7 +195,7 @@ public class SingleBuyListItemActivity extends FragmentActivity {
 
     }
 
-    class ImageGrabber extends AsyncTask<Void, Void, String> {
+    class ImageGrabber extends AsyncTask<Void, Void, ArrayList<String>> {
         private String itemID;
 
         public ImageGrabber(String itemID){
@@ -205,7 +205,7 @@ public class SingleBuyListItemActivity extends FragmentActivity {
         /**
          * Get all images
          * */
-        protected String doInBackground(Void... params) {
+        protected ArrayList<String> doInBackground(Void... params) {
             ParseQuery<ParseObject> query = ParseQuery.getQuery("SaleItem");
             query.whereEqualTo("objectId", itemID);
 
@@ -219,11 +219,29 @@ public class SingleBuyListItemActivity extends FragmentActivity {
 
                 if (imageTempList.size() > 0) {
                     ParseObject imageResult = imageTempList.get(0);
-                    ParseFile file = (ParseFile) imageResult.get("imageOne");
-                    if (file != null) {
-                        String imageUri = file.getUrl();
-                        return imageUri;
+                    String getStr = "";
+                    ParseFile file = null;
+                    String imageUri = "";
+                    ArrayList<String> retArray = new ArrayList<String>();
+                    for (int i = 0; i < 3 ; i++) {
+                        switch(i) {
+                            case 0:
+                                getStr = "imageOne";
+                                break;
+                            case 1:
+                                getStr = "imageTwo";
+                                break;
+                            case 2:
+                                getStr = "imageThree";
+                                break;
+                        }
+                        file = (ParseFile) imageResult.get(getStr);
+                        if (file != null) {
+                            imageUri = file.getUrl();;
+                            retArray.add(imageUri);
+                        }
                     }
+                    return retArray;
                 }
 
             } catch (com.parse.ParseException e) {
@@ -236,10 +254,12 @@ public class SingleBuyListItemActivity extends FragmentActivity {
         /**
          * After background task has completed
          * **/
-        protected void onPostExecute(String imageUri) {
-            if (imageUri == null) {
+        protected void onPostExecute(ArrayList<String> retArray) {
+            if (retArray.size() == 0) {
                 return;
             }
+
+            String imageUri = null;
 
             ImageSize targetSize = new ImageSize(480,640);
             DisplayImageOptions options = new DisplayImageOptions.Builder()
@@ -249,30 +269,34 @@ public class SingleBuyListItemActivity extends FragmentActivity {
                     .showImageForEmptyUri(R.drawable.no_image_found)
                     .showImageOnFail(R.drawable.no_image_found)
                     .build();
+
             ImageLoader imageLoader = ImageLoader.getInstance();
 
-            // Load image, decode it to Bitmap and return Bitmap to callback
-            imageLoader.loadImage(imageUri, targetSize, options, new SimpleImageLoadingListener() {
-                @Override
-                public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
-                    imageArray.add(loadedImage);
+            for (int j = 0; j < retArray.size(); j++) {
+                imageUri = retArray.get(j);
+
+                // Load image, decode it to Bitmap and return Bitmap to callback
+                imageLoader.loadImage(imageUri, targetSize, options, new SimpleImageLoadingListener() {
+                    @Override
+                    public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
+                        imageArray.add(loadedImage);
 
                     /*
                      * Shitty workaround to exception thrown when back button
                      * is pressed too quickly after activity creation
                      */
-                    try {
-                        mViewPager.setAdapter(mPagerAdapter);
-                    } catch(IllegalStateException e) {
-                        e.printStackTrace();
+                        try {
+                            mViewPager.setAdapter(mPagerAdapter);
+                        } catch(IllegalStateException e) {
+                            e.printStackTrace();
+                        }
                     }
-                }
 
-                public void onLoadingFailed(String imageUri, View view, FailReason failReason) {
-                    Log.e("MainBuyActivity.onPostExecute.onLoadingFailed",
-                            "Loading image failed." + failReason.toString());
-                }
-            });
+                    public void onLoadingFailed(String imageUri, View view, FailReason failReason) {
+                        Log.d("Failed imageUri:", imageUri);;
+                    }
+                });
+            }
         }
     }
 }
