@@ -37,27 +37,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0fb734d0-ba8e-457d-8582-07760a015c51" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/libs2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/ReviewActivity.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/backend/BackendModel.java" afterPath="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/backend/BackendModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/BuyListViewAdapter.java" afterPath="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/BuyListViewAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/MainApplication.java" afterPath="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/MainApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/MainBuyActivity.java" afterPath="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/MainBuyActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/backend/ParseModel.java" afterPath="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/backend/ParseModel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/SellActivity.java" afterPath="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/SellActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudentSalesApp/src/main/res/layout/activity_item_detail.xml" afterPath="$PROJECT_DIR$/StudentSalesApp/src/main/res/layout/activity_item_detail.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudentSalesApp/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/StudentSalesApp/src/main/res/layout/activity_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudentSalesApp/src/main/res/layout/activity_sell.xml" afterPath="$PROJECT_DIR$/StudentSalesApp/src/main/res/layout/activity_sell.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudentSalesApp/src/main/res/drawable/custombutton.xml" afterPath="$PROJECT_DIR$/StudentSalesApp/src/main/res/drawable/custombutton.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/libs.xml" afterPath="$PROJECT_DIR$/.idea/libraries/libs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudentSalesApp/src/main/res/drawable/listbackground.xml" afterPath="$PROJECT_DIR$/StudentSalesApp/src/main/res/drawable/listbackground.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudentSalesApp/src/main/main.iml" afterPath="$PROJECT_DIR$/StudentSalesApp/src/main/main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudentSalesApp/src/main/res/menu/review_menu.xml" afterPath="$PROJECT_DIR$/StudentSalesApp/src/main/res/menu/review_menu.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudentSalesApp/src/main/res/menu/sell_menu.xml" afterPath="$PROJECT_DIR$/StudentSalesApp/src/main/res/menu/sell_menu.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudentSalesApp/src/main/res/layout/single_buy_row.xml" afterPath="$PROJECT_DIR$/StudentSalesApp/src/main/res/layout/single_buy_row.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudentSalesApp/src/main/res/menu/single_menu.xml" afterPath="$PROJECT_DIR$/StudentSalesApp/src/main/res/menu/single_menu.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StudentSalesApp/src/main/res/layout/single_review_row.xml" afterPath="$PROJECT_DIR$/StudentSalesApp/src/main/res/layout/single_review_row.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="StudentSalesApp.iws" />
@@ -129,10 +109,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainBuyActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MainBuyActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/MainBuyActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="130" column="8" selection-start="4799" selection-end="4799" vertical-scroll-proportion="0.28783384" vertical-offset="1171" max-vertical-offset="5535">
+            <state line="130" column="8" selection-start="4799" selection-end="4799" vertical-scroll-proportion="0.0" vertical-offset="1171" max-vertical-offset="5535">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SellActivity.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/SellActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="323" column="8" selection-start="11664" selection-end="11664" vertical-scroll-proportion="0.5098336" vertical-offset="4508" max-vertical-offset="8025">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#11885#13820#0" expanded="true" />
+                <element signature="e#13809#13810#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SaleItem.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/backend/SaleItem.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="48" column="0" selection-start="946" selection-end="946" vertical-scroll-proportion="0.0" vertical-offset="514" max-vertical-offset="3120">
               <folding />
             </state>
           </provider>
@@ -191,12 +193,12 @@
         <option value="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/MainApplication.java" />
         <option value="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/backend/ParseModel.java" />
         <option value="$PROJECT_DIR$/StudentSalesApp/src/main/res/layout/activity_sell.xml" />
-        <option value="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/SellActivity.java" />
         <option value="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/MainBuyActivity.java" />
         <option value="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/BuyListViewAdapter.java" />
         <option value="$PROJECT_DIR$/StudentSalesApp/src/main/res/menu/sell_menu.xml" />
         <option value="$PROJECT_DIR$/StudentSalesApp/src/main/res/menu/review_menu.xml" />
         <option value="$PROJECT_DIR$/StudentSalesApp/src/main/res/menu/single_menu.xml" />
+        <option value="$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/SellActivity.java" />
       </list>
     </option>
   </component>
@@ -301,56 +303,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentSalesApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentSalesApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StudentSalesApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -552,7 +504,7 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="AndroidTargetDevices" value="42f74e0338ac9fcb" />
     <property name="FullScreen" value="true" />
-    <property name="DEBUGGABLE_DEVICE" value="42f74e0338ac9fcb" />
+    <property name="DEBUGGABLE_DEVICE" value="411f56fe20b37097" />
     <property name="DEBUGGABLE_PROCESS" value="com.studentsaleapp.activities" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
   </component>
@@ -810,7 +762,11 @@
       <created>1381923758605</created>
       <updated>1381923758605</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Able to delete items when reviewing with a confirmation dialog. Added progress dialog when you sell an item and its uploading stuff to the database.">
+      <created>1382603851107</created>
+      <updated>1382603851107</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -835,7 +791,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32763532" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -845,7 +801,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32621083" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3988604" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2614679" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26068377" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32763532" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -856,7 +812,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959481" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21961102" sideWeight="0.5854701" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21961102" sideWeight="0.5854701" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23361823" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="2559" y="1" width="2562" height="1383" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -878,22 +834,13 @@
     <MESSAGE value="Can upload three photos limited to 800x600 ea without running out of memory. Its possible to increase this size but theres no real point to have it much bigger i think." />
     <MESSAGE value="&lt;3 MEMORY CACHE. Scrolling should be silky smooth now. Just added cache to memory setting in the universal image loader options along with some minor stuff." />
     <MESSAGE value="Beginnings of the review listings page. Doesn't load anything as i'm not too sure what the 'query' string extra should be in the onCreate." />
-    <option name="LAST_COMMIT_MESSAGE" value="Beginnings of the review listings page. Doesn't load anything as i'm not too sure what the 'query' string extra should be in the onCreate." />
+    <MESSAGE value="Able to delete items when reviewing with a confirmation dialog. Added progress dialog when you sell an item and its uploading stuff to the database." />
+    <option name="LAST_COMMIT_MESSAGE" value="Able to delete items when reviewing with a confirmation dialog. Added progress dialog when you sell an item and its uploading stuff to the database." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/res/layout/single_buy_row.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="2" selection-start="261" selection-end="261" vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="1785">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/res/layout/activity_item_detail.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="34" selection-start="623" selection-end="623" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="3210">
@@ -902,13 +849,6 @@
       </provider>
       <provider editor-type-id="android-designer">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/backend/SaleItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="13" selection-start="203" selection-end="203" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3120">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/res/layout/activity_main.xml">
@@ -964,17 +904,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/SellActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="151" column="8" selection-start="4618" selection-end="4618" vertical-scroll-proportion="0.0" vertical-offset="2013" max-vertical-offset="7950">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#11752#13703#0" expanded="true" />
-            <element signature="e#13692#13693#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/res/menu/main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="674">
@@ -1012,8 +941,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/MainBuyActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="130" column="8" selection-start="4799" selection-end="4799" vertical-scroll-proportion="0.28783384" vertical-offset="1171" max-vertical-offset="5535">
+        <state line="130" column="8" selection-start="4799" selection-end="4799" vertical-scroll-proportion="0.0" vertical-offset="1171" max-vertical-offset="5535">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/backend/SaleItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="0" selection-start="946" selection-end="946" vertical-scroll-proportion="0.0" vertical-offset="514" max-vertical-offset="3120">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/android/view/View.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="17190">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StudentSalesApp/src/main/java/com/studentsaleapp/activities/SellActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="323" column="8" selection-start="11664" selection-end="11664" vertical-scroll-proportion="0.5098336" vertical-offset="4508" max-vertical-offset="8025">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#11885#13820#0" expanded="true" />
+            <element signature="e#13809#13810#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

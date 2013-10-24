@@ -300,14 +300,19 @@ public class SellActivity extends Activity {
         pDialog.setCancelable(false);
         pDialog.show();
 
+
 		// Create the sale item and add the fields
 		final SaleItem saleItem = new SaleItem();
         Location lastLocation = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
 		saleItem.setTitle(titleText);
 		saleItem.setDescription(descriptionText);
 		saleItem.setContact(phoneNumberText);
-        saleItem.setLocation(lastLocation.getLatitude(), lastLocation.getLongitude());
-        saleItem.setLocationString(locationText);
+        if (lastLocation != null) {
+            saleItem.setLocation(lastLocation.getLatitude(), lastLocation.getLongitude());
+            saleItem.setLocationString(locationText);
+        } else {
+            saleItem.setLocationString("Location Unknown.");
+        }
 		saleItem.setPrice(Double.parseDouble(priceText));
 		saleItem.setUserID(getDeviceID());
 
@@ -352,10 +357,10 @@ public class SellActivity extends Activity {
 
                         model.setItemImages(saleItem, imagesToAdd, imageObject);
                         //mImageBitmaps.add(BitmapFactory.decodeFile(mImagePaths.get(i).getAbsolutePath(), bitmapFactoryOptions));
-                        pDialog.dismiss();
-                        finish();
                     }
                 }
+                pDialog.dismiss();
+                finish();
             }
         };
         thread.start();
