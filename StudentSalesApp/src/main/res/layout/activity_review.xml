@@ -8,10 +8,10 @@
              android:background="#ffffff">
 
     <ListView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/reviewList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_gravity="left|top"
             android:dividerHeight="1px"
-            android:divider="@drawable/listdivider"/>
+            android:divider="@drawable/listdivider"
+            android:background="#ffffff"/>
 </FrameLayout>
