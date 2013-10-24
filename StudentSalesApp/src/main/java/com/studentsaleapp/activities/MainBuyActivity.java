@@ -82,7 +82,7 @@ public class MainBuyActivity extends ListActivity {
                 query = "userID:" + userID;
             }
         }
-        new getListings(this.getApplicationContext(), query).execute();
+        new ListingsGrabber(this, this.getApplicationContext(), query).execute();
 
         // Get the intent, verify the action and get the query
         Intent intent = getIntent();
@@ -187,13 +187,15 @@ public class MainBuyActivity extends ListActivity {
         startActivity(search);
     }
 
-    class getListings extends AsyncTask<Void, Void, String> {
+    class ListingsGrabber extends AsyncTask<Void, Void, String> {
         ArrayList<SaleItem> fetchedRowItems;
         private Context mContext;
         private String mQuery;
         private Location mLocation;
+        private MainBuyActivity mainBuyActivity;
 
-        public getListings (Context context, String query){
+        public ListingsGrabber(MainBuyActivity mainBuyActivity, Context context, String query){
+            this.mainBuyActivity = mainBuyActivity;
             mContext = context;
             mQuery = query;
             setupLocation(mContext);
@@ -218,7 +220,7 @@ public class MainBuyActivity extends ListActivity {
          * */
         protected String doInBackground(Void... params) {
             // Get the backend model
-            MainApplication appState = (MainApplication)getApplicationContext();
+            MainApplication appState = (MainApplication) getApplicationContext();
             model = appState.getBackendModel();
 
             // Set dummy location if location is null
@@ -269,10 +271,10 @@ public class MainBuyActivity extends ListActivity {
 
             // Setup the adapter
             if (reviewMode) {
-                adapter = new BuyListViewAdapter(mContext,
+                adapter = new BuyListViewAdapter(mainBuyActivity, mContext,
                         R.layout.single_review_row, rowItems, true);
             } else {
-                adapter = new BuyListViewAdapter(mContext,
+                adapter = new BuyListViewAdapter(mainBuyActivity, mContext,
                         R.layout.single_buy_row, rowItems, false);
             }
             setListAdapter(adapter);
@@ -280,7 +282,6 @@ public class MainBuyActivity extends ListActivity {
             for (BuyRowItem item: rowItems) {
                new ImageGrabber(item).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
             }
-
         }
     }
 
@@ -396,7 +397,6 @@ public class MainBuyActivity extends ListActivity {
         public void onProviderEnabled(String provider) {}
         public void onStatusChanged(String provider, int status, Bundle extras) {}
     };
-
 
 }
 

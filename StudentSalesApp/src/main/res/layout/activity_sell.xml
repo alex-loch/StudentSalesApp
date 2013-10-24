@@ -4,6 +4,7 @@
             android:fillViewport="true"
             android:clickable="false"
             android:overScrollMode="never"
+            android:id="@+id/sellScrollView"
             android:background="#ffffff">
 
     <LinearLayout

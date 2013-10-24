@@ -1,7 +1,2 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <!--  Sell Option -->
-    <item
-            android:id="@+id/sell_option"
-            android:showAsAction="ifRoom"
-            android:title="@string/sell_option_text" />
 </menu>

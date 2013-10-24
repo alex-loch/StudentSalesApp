@@ -39,21 +39,13 @@ public class MainApplication extends Application {
 		model = new ParseModel(this);
 		Log.i(TAG, "Backend ParseModel created");
 	}
-	
+
 	/**
 	 * Getter for the backend model
-	 * 
+	 *
 	 * @return - the backend model
 	 */
 	protected BackendModel getBackendModel() {
 		return model;
 	}
-
-    public void buttonDeleteItem(View button) {
-        Log.e("MainBuyActivity.buttonDeleteItem", "NYYIIIGEYAAAAH");
-    }
-
-    public void buttonEditItem(View button) {
-        Log.e("MainBuyActivity.buttonEditItem", "SPIKY NIPPLES (* )( *)");
-    }
 }

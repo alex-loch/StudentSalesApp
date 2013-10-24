@@ -3,7 +3,7 @@
                 android:id="@+id/rLayout"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:background="@drawable/custombutton">
+                android:background="@drawable/listbackground">
 
     <!-- Icon -->
     <ImageView

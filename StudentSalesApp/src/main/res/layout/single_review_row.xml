@@ -56,7 +56,7 @@
             android:textSize="14sp"
             android:maxLength="11"
             android:ellipsize="none"/>
-
+<!--
     <Button
         android:layout_width="30dp"
         android:layout_height="30dp"
@@ -67,7 +67,7 @@
         android:layout_marginTop="-10dp"
         android:layout_marginRight="90dp"
         android:onClick="buttonEditItem"/>
-
+//-->
     <Button
             android:layout_width="30dp"
             android:layout_height="30dp"
@@ -76,8 +76,8 @@
             android:id="@+id/reviewDelete"
             android:layout_alignParentRight="true"
             android:layout_marginTop="-10dp"
-            android:layout_marginRight="20dp"
-            android:onClick="buttonDeleteItem"/>
+            android:layout_marginRight="20dp" />
+            <!--android:onClick="buttonDeleteItem"//-->
 
     <!-- Description -->
     <TextView

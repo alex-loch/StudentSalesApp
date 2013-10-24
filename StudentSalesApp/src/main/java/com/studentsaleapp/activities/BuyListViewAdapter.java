@@ -5,9 +5,13 @@ import java.util.Date;
 import java.util.List;
 
 import com.studentsaleapp.activities.R;
+import com.studentsaleapp.backend.BackendModel;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +20,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class BuyListViewAdapter extends ArrayAdapter<BuyRowItem> {
 
@@ -24,6 +29,10 @@ public class BuyListViewAdapter extends ArrayAdapter<BuyRowItem> {
 
     private boolean reviewMode;
 
+    private MainBuyActivity mainBuyActivity;
+
+    private AlertDialog alertDialog;
+
 	/**
 	 * Constructor for the Buy List View Adapter
 	 * 
@@ -31,9 +40,10 @@ public class BuyListViewAdapter extends ArrayAdapter<BuyRowItem> {
 	 * @param resourceId - identification of the resource
 	 * @param items - items to display
 	 */
-	public BuyListViewAdapter(Context context, int resourceId,
+	public BuyListViewAdapter(MainBuyActivity mainActivity, Context context, int resourceId,
 			List<BuyRowItem> items, boolean reviewMode) {
 		super(context, resourceId, items);
+        this.mainBuyActivity = mainActivity;
         this.reviewMode = reviewMode;
 		this.context = context;
 	}
@@ -63,7 +73,7 @@ public class BuyListViewAdapter extends ArrayAdapter<BuyRowItem> {
 	 */
 	public View getView(int position, View convertView, ViewGroup parent) {
 		ViewHolder holder = null;
-		BuyRowItem rowItem = getItem(position);
+		final BuyRowItem rowItem = getItem(position);
 
 		LayoutInflater mInflater = (LayoutInflater) context
 				.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
@@ -85,8 +95,28 @@ public class BuyListViewAdapter extends ArrayAdapter<BuyRowItem> {
                 holder.txtLocation = (TextView) convertView.findViewById(R.id.reviewLocation);
                 holder.pBar = (ProgressBar) convertView.findViewById((R.id.pBar));
                 holder.txtCreationTime = (TextView) convertView.findViewById(R.id.reviewCreationTime);
-                holder.buttonEdit = (Button) convertView.findViewById(R.id.reviewEdit);
+                // holder.buttonEdit = (Button) convertView.findViewById(R.id.reviewEdit);
                 holder.buttonDelete = (Button) convertView.findViewById(R.id.reviewDelete);
+
+                final AlertDialog.Builder builder = new AlertDialog.Builder(mainBuyActivity)
+                        .setTitle("Delete Listing")
+                        .setMessage("Do you really want to delete your listing?")
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int whichButton) {
+                                ((MainApplication) context.getApplicationContext())
+                                        .getBackendModel().removeItem(rowItem.getItemID());
+                                mainBuyActivity.finish();
+                            }})
+                        .setNegativeButton(android.R.string.no, null);
+
+                holder.buttonDelete.setOnClickListener(new View.OnClickListener() {
+                    String itemID = rowItem.getItemID();
+                    public void onClick(View view) {
+                        alertDialog = builder.create();
+                        alertDialog.show();
+                    }
+                });
             } else {
                 convertView = mInflater.inflate(R.layout.single_buy_row, null);
                 holder.txtDesc = (TextView) convertView.findViewById(R.id.desc);
@@ -134,5 +164,7 @@ public class BuyListViewAdapter extends ArrayAdapter<BuyRowItem> {
 
 		return convertView;
 	}
+
+
 
 }

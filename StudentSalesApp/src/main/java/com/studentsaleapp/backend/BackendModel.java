@@ -54,6 +54,17 @@ public interface BackendModel {
 	 */
 	public void removeItem(SaleItem item);
 
+    /**
+     * Removes the item with the same itemID from the database.
+     * If no item or multiple items match, no item is removed.
+     *
+     * Currently this method will log an error to the debug console
+     * if this fails, but it would be nice to return an error value.
+     *
+     * @param itemID the ID of the item to be removed
+     */
+    public void removeItem(String itemID);
+
 	/**
 	 * Get the list of images associated with the item in the database
 	 * with the same itemID as item.

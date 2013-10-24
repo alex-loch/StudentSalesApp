@@ -34,6 +34,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -293,8 +294,14 @@ public class SellActivity extends Activity {
         }
         button.setEnabled(false);
 
+        pDialog = new ProgressDialog(SellActivity.this);
+        pDialog.setMessage("Uploading items...");
+        pDialog.setIndeterminate(false);
+        pDialog.setCancelable(false);
+        pDialog.show();
+
 		// Create the sale item and add the fields
-		SaleItem saleItem = new SaleItem();
+		final SaleItem saleItem = new SaleItem();
         Location lastLocation = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
 		saleItem.setTitle(titleText);
 		saleItem.setDescription(descriptionText);
@@ -304,44 +311,54 @@ public class SellActivity extends Activity {
 		saleItem.setPrice(Double.parseDouble(priceText));
 		saleItem.setUserID(getDeviceID());
 
-		Log.i(TAG, "Sell Item: " + titleText + ", " + descriptionText + ", " + phoneNumberText + ", " + locationText + ", " + priceText);
+		Log.i(TAG, "Sell Item: " + titleText + ", " + descriptionText + ", " + phoneNumberText +
+                ", " + locationText + ", " + priceText);
 		 	
 		// For testing the following lines have been extracted from the above comment
 		Toast.makeText(this, "Listed Item '" + titleText + "'", Toast.LENGTH_SHORT).show();
 		
         // Add the item to the backend model and finish
-		ParseModel model = new ParseModel(getApplicationContext());
-        ParseObject imageObject = model.addItem(saleItem, null);
+		final ParseModel model = new ParseModel(getApplicationContext());
+        final ParseObject imageObject = model.addItem(saleItem, null);
 
-        ArrayList<Bitmap> imagesToAdd;
-        for (int i = 0; i < mImagePaths.size(); i++) {
-            BitmapFactory.Options bitmapFactoryOptions = new BitmapFactory.Options();
-            bitmapFactoryOptions.inJustDecodeBounds = true;
-            BitmapFactory.decodeFile(mImagePaths.get(i).getAbsolutePath(), bitmapFactoryOptions);
+        Thread thread = new Thread() {
+            @Override
+            public void run() {
+                ArrayList<Bitmap> imagesToAdd;
+                if (currentImage > 0) {
+                    for (int i = 0; i < mImagePaths.size(); i++) {
+                        BitmapFactory.Options bitmapFactoryOptions = new BitmapFactory.Options();
+                        bitmapFactoryOptions.inJustDecodeBounds = true;
+                        BitmapFactory.decodeFile(mImagePaths.get(i).getAbsolutePath(), bitmapFactoryOptions);
 
-            int requiredHeight = 600;
-            int requiredWidth = 800;
-            int ratioHeight = (int) Math.ceil(bitmapFactoryOptions.outHeight / requiredHeight);
-            int ratioWidth = (int) Math.ceil(bitmapFactoryOptions.outWidth / requiredWidth);
+                        int requiredHeight = 600;
+                        int requiredWidth = 800;
+                        int ratioHeight = (int) Math.ceil(bitmapFactoryOptions.outHeight / requiredHeight);
+                        int ratioWidth = (int) Math.ceil(bitmapFactoryOptions.outWidth / requiredWidth);
 
-            if (ratioHeight > 1 || ratioWidth > 1) {
-                if (ratioHeight >= ratioWidth) {
-                    bitmapFactoryOptions.inSampleSize = ratioHeight;
-                } else {
-                    bitmapFactoryOptions.inSampleSize = ratioWidth;
+                        if (ratioHeight > 1 || ratioWidth > 1) {
+                            if (ratioHeight >= ratioWidth) {
+                                bitmapFactoryOptions.inSampleSize = ratioHeight;
+                            } else {
+                                bitmapFactoryOptions.inSampleSize = ratioWidth;
+                            }
+                        }
+                        bitmapFactoryOptions.inJustDecodeBounds = false;
+                        imagesToAdd = new ArrayList<Bitmap>();
+                        for (int j = 0; j <= i; j++) {
+                            imagesToAdd.add(j == i ? BitmapFactory.decodeFile(
+                                    mImagePaths.get(i).getAbsolutePath(), bitmapFactoryOptions) : null);
+                        }
+
+                        model.setItemImages(saleItem, imagesToAdd, imageObject);
+                        //mImageBitmaps.add(BitmapFactory.decodeFile(mImagePaths.get(i).getAbsolutePath(), bitmapFactoryOptions));
+                        pDialog.dismiss();
+                        finish();
+                    }
                 }
             }
-            bitmapFactoryOptions.inJustDecodeBounds = false;
-            imagesToAdd = new ArrayList<Bitmap>();
-            for (int j = 0; j <= i; j++) {
-                imagesToAdd.add(j == i ? BitmapFactory.decodeFile(
-                        mImagePaths.get(i).getAbsolutePath(), bitmapFactoryOptions) : null);
-            }
-
-            model.setItemImages(saleItem, imagesToAdd, imageObject);
-            //mImageBitmaps.add(BitmapFactory.decodeFile(mImagePaths.get(i).getAbsolutePath(), bitmapFactoryOptions));
-        }
-		finish();
+        };
+        thread.start();
 	}
 	
 	/**
@@ -397,7 +414,8 @@ public class SellActivity extends Activity {
 		} 
 		
 		// Setup the location listener
-		locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, networkLocationListener);
+		locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0,
+                networkLocationListener);
 	}
 	
 	/**
@@ -429,25 +447,6 @@ public class SellActivity extends Activity {
 			addresses = geocoder.getFromLocation(latitude, longitude, 1);
 			Log.i(TAG, "setLocation Iteration: " + latitude + ", " + longitude);
 		} while (addresses.size() == 0);
-		
-		/*// Create the address string containing no null Strings
-		int lineCounter = 0;
-		String locationString = "";
-		String addressLine;
-		while (true) {
-			addressLine = addresses.get(0).getAddressLine(lineCounter++);
-			if (addressLine == null) {
-				if (lineCounter == 1) {
-					locationString = "No Location Found";
-				} else {
-					// Remove trailing ", "
-					locationString = locationString.substring(0, locationString.length() - 2);
-				}
-				break;
-			}
-			locationString += addressLine + ", ";
-		}
-		*/
 
         Address address = addresses.get(0);
         String locationString = address.getLocality() + ", " + address.getAdminArea();
@@ -494,7 +493,7 @@ public class SellActivity extends Activity {
             field.setText("Please enter a contact number.");
             return false;
         }
-        else if (contact.length() < 8 || contact.length() > 10){
+        else if (contact.length() < 8 || contact.length() > 11){
             field.setText("Please enter a valid contact number.");
             return false;
         }

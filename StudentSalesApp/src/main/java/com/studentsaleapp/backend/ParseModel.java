@@ -132,15 +132,15 @@ public class ParseModel implements BackendModel {
 		return query;
 	}
 
-	/**
-	 * Return the object in the database with ID itemID.
-	 * 
-	 * @param itemID the itemID to search for
-	 * @return the object in the database matching itemID
-	 */
-	private ParseObject findItem(String itemID) {
+    /**
+     * Return the object in the database with ID itemID.
+     *
+     * @param itemID the itemID to search for
+     * @return the object in the database matching itemID
+     */
+	public ParseObject findItem(String itemID) {
 		ParseQuery query = new ParseQuery("SaleItem");
-		query.whereEqualTo("itemid", itemID);
+		query.whereEqualTo("objectId", itemID);
 		
 		try {
 			this.retrievedObjects = query.find();
@@ -297,6 +297,12 @@ public class ParseModel implements BackendModel {
 		ParseObject o = this.findItem(item);
 		o.deleteInBackground();
 	}
+
+    @Override
+    public void removeItem(String itemID) {
+        ParseObject o = this.findItem(itemID);
+        o.deleteInBackground();
+    }
 
 	@Override
 	public ArrayList<Bitmap> getItemImages(SaleItem item) {
