@@ -1,2 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- Sets the id of the image gallery -->
 <resources><item name="item_gallery" type="id">item_gallery</item></resources>

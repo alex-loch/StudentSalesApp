@@ -1,3 +1,4 @@
+<!-- Scroll View is used to allow for different screen sizes -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
@@ -17,13 +18,14 @@
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:paddingTop="@dimen/activity_vertical_margin" >
 
-        <!-- Title -->
+        <!-- Item Title Title-->
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sell_title"
                 android:textColor="#000000"/>
 
+        <!-- User Enters the Title -->
         <EditText
                 android:id="@+id/titleTextField"
                 android:layout_width="match_parent"
@@ -33,8 +35,9 @@
                 android:inputType="textCapWords"
                 android:maxLines="1"
                 android:maxLength="50">
-
         </EditText>
+
+        <!-- Title Validation -->
         <TextView
                 android:id="@+id/titleValidateField"
                 android:layout_width="wrap_content"
@@ -42,13 +45,14 @@
                 android:textColor="#FF0000"
                 android:text="" />
 
-        <!-- Description -->
+        <!-- Description Title -->
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sell_description"
                 android:textColor="#000000"/>
 
+        <!-- User Enters the Description -->
         <EditText
                 android:id="@+id/descriptionTextField"
                 android:layout_width="match_parent"
@@ -58,6 +62,8 @@
                 android:hint="@string/sell_descriptionHint"
                 android:inputType="textCapSentences|textMultiLine" >
         </EditText>
+
+        <!-- Description Validation -->
         <TextView
                 android:id="@+id/descriptionValidateField"
                 android:layout_width="wrap_content"
@@ -65,13 +71,14 @@
                 android:textColor="#FF0000"
                 android:text="" />
 
-        <!-- Price -->
+        <!-- Price Title -->
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sell_price"
                 android:textColor="#000000"/>
 
+        <!-- User Enters the Price -->
         <EditText
                 android:id="@+id/priceTextField"
                 android:layout_width="match_parent"
@@ -82,6 +89,8 @@
                 android:inputType="numberDecimal"
                 android:hint="@string/sell_priceHint">
         </EditText>
+
+        <!-- Price Validation -->
         <TextView
                 android:id="@+id/priceValidateField"
                 android:layout_width="wrap_content"
@@ -95,6 +104,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
+            <!-- Photos Title -->
             <TextView
                     android:id="@+id/photosTextView"
                     android:layout_width="wrap_content"
@@ -104,12 +114,14 @@
 
         </LinearLayout>
 
+        <!-- Images + icons -->
         <RelativeLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center" >
 
+            <!-- Image 1 -->
             <ImageView
                     android:id="@+id/photoView1"
                     android:layout_alignParentLeft="true"
@@ -120,6 +132,7 @@
                     android:src="@drawable/sell_image"
                     android:onClick="takePhoto"/>
 
+            <!-- Image 2 -->
             <ImageView
                     android:id="@+id/photoView2"
                     android:layout_width="96dp"
@@ -130,6 +143,7 @@
                     android:src="@drawable/sell_image"
                     android:onClick="takePhoto"/>
 
+            <!-- Image 3 -->
             <ImageView
                     android:id="@+id/photoView3"
                     android:layout_width="96dp"
@@ -141,13 +155,14 @@
                     android:onClick="takePhoto"/>
         </RelativeLayout>
 
-        <!-- Phone Number -->
+        <!-- Phone Number Title-->
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sell_phoneNumber"
                 android:textColor="#000000"/>
 
+        <!-- User enters their Phone Number -->
         <EditText
                 android:id="@+id/phoneNumberTextField"
                 android:layout_width="match_parent"
@@ -157,6 +172,7 @@
                 android:hint="@string/sell_phoneHint">
         </EditText>
 
+        <!-- Phone Number Validation -->
         <TextView
                 android:id="@+id/contactValidateField"
                 android:layout_width="wrap_content"
@@ -164,13 +180,14 @@
                 android:textColor="#FF0000"
                 android:text="" />
 
-        <!-- Location -->
+        <!-- Location Title-->
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sell_location"
                 android:textColor="#000000"/>
 
+        <!-- Auto-filled User Location -->
         <EditText
                 android:id="@+id/locationTextField"
                 android:layout_width="match_parent"
@@ -180,7 +197,7 @@
                 android:enabled="false" >
         </EditText>
 
-        <!-- Button -->
+        <!-- Sell Button -->
         <Button
                 android:id="@+id/ButtonSellItem"
                 android:layout_width="fill_parent"

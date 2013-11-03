@@ -62,6 +62,7 @@
             android:gravity="center"
             android:padding="5dp">
 
+            <!-- Price Title -->
             <TextView
                 android:layout_width="80dp"
                 android:layout_height="30dp"
@@ -73,6 +74,7 @@
                 android:textSize="16sp"
                 android:background="@drawable/borderright"/>
 
+            <!-- Items Price -->
             <TextView
                 android:layout_width="fill_parent"
                 android:paddingTop="6dp"
@@ -94,6 +96,7 @@
             android:gravity="center"
             android:padding="5dp">
 
+            <!-- Date Title -->
             <TextView
                 android:layout_width="80dp"
                 android:layout_height="30dp"
@@ -105,6 +108,7 @@
                 android:background="@drawable/borderright"
                 android:paddingTop="6dp"/>
 
+            <!-- Listing Date -->
             <TextView
                 android:layout_width="fill_parent"
                 android:id="@+id/singleItemTime"
@@ -126,6 +130,7 @@
         android:gravity="center"
         android:padding="5dp">
 
+        <!-- Contact Title -->
         <TextView
             android:layout_width="80dp"
             android:layout_height="30dp"
@@ -137,6 +142,7 @@
             android:textColor="#669900"
             android:background="@drawable/borderright"/>
 
+        <!-- Item Contact Information -->
         <TextView
             android:layout_width="fill_parent"
             android:paddingTop="6dp"
@@ -157,6 +163,7 @@
         android:gravity="center"
         android:padding="5dp">
 
+        <!-- Location Title -->
         <TextView
             android:layout_width="78dp"
             android:layout_height="30dp"
@@ -167,6 +174,7 @@
             android:textColor="#669900"
             android:paddingTop="6dp"/>
 
+        <!-- Location Information -->
         <TextView
             android:layout_width="fill_parent"
             android:minHeight="30dp"
@@ -184,11 +192,13 @@
 
     </RelativeLayout>
 
+    <!-- Border and place holder -->
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="2dp"
         android:background="@drawable/bottomborder"/>
 
+    <!-- Call Seller Button -->
     <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"

@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Creates and add the custom theme for SSA which is a parent of Holo Light -->
     <style name="SSATheme" parent="android:style/Theme.Holo.Light.DarkActionBar">
         <item name="android:actionBarStyle">@style/actionBar</item>
         <item name="android:editTextStyle">@style/SSAEditText</item>\
         <item name="android:actionMenuTextColor">#66CC00</item>
     </style>
 
+    <!-- Changes the ActionBar background and text colour -->
     <style name="actionBar" parent="android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
         <item name="android:background">@drawable/actionbar_background</item>
         <item name="android:textColor">#fff</item>
     </style>
 
+    <!-- Changes the underline colour and cursor colour within the text fields. -->
     <style name="SSAEditText" parent="@android:style/Widget.Holo.Light.EditText">
         <item name="android:background">@drawable/textfeild_searchview_holo_light</item>
         <item name="android:textCursorDrawable">@null</item>

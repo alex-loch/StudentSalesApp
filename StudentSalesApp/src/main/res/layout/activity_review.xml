@@ -7,6 +7,7 @@
              tools:ignore="MergeRootFrame"
              android:background="#ffffff">
 
+    <!-- Creates the list to be filled by the users items (review page) -->
     <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"

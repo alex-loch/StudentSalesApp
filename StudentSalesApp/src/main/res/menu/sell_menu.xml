@@ -1,3 +1,5 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- No menu items are required on the sell page (therefore blank) -->
+
 </menu>

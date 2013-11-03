@@ -32,7 +32,7 @@
             android:maxLines="1"
             android:ellipsize="end"/>
 
-    <!-- Place holder -->
+    <!-- Place holder (Posted On:) -->
     <TextView
             android:id="@+id/reviewPostedOn"
             android:layout_width="wrap_content"
@@ -46,7 +46,7 @@
             android:ellipsize="none"
             android:text="Posted On: "/>
 
-    <!-- Creation Time -->
+    <!-- Creation Time (Date) -->
     <TextView
             android:id="@+id/reviewCreationTime"
             android:layout_width="wrap_content"
@@ -57,18 +57,8 @@
             android:textSize="14sp"
             android:maxLength="11"
             android:ellipsize="none"/>
-<!--
-    <Button
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_below="@id/reviewTitle"
-        android:id="@+id/reviewEdit"
-        android:background="@drawable/review_edit"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="-10dp"
-        android:layout_marginRight="90dp"
-        android:onClick="buttonEditItem"/>
-//-->
+
+    <!-- Delete Button -->
     <Button
             android:layout_width="30dp"
             android:layout_height="30dp"
@@ -78,9 +68,8 @@
             android:layout_alignParentRight="true"
             android:layout_marginTop="-10dp"
             android:layout_marginRight="20dp" />
-            <!--android:onClick="buttonDeleteItem"//-->
 
-    <!-- Description -->
+    <!-- Description (not visible) -->
     <TextView
             android:id="@+id/reviewDesc"
             android:layout_width="250dp"
@@ -97,7 +86,7 @@
             android:lineSpacingMultiplier="0.9"
             android:visibility="gone"/>
 
-    <!-- Location -->
+    <!-- Location (not visible) -->
     <TextView
             android:id="@+id/reviewLocation"
             android:layout_width="170dp"
@@ -112,7 +101,7 @@
             android:textSize="10.5sp"
             android:visibility="gone"/>
 
-    <!-- Price -->
+    <!-- Price (not visible) -->
     <TextView
             android:id="@+id/reviewPrice"
             android:layout_width="wrap_content"
@@ -131,7 +120,7 @@
             android:visibility="gone"
             />
 
-    <!-- Contact Details -->
+    <!-- Contact Details (not visible) -->
     <TextView
             android:id="@+id/reviewContact"
             android:layout_width="wrap_content"
@@ -143,6 +132,7 @@
             android:textSize="14sp"
             android:visibility="gone" />
 
+    <!-- Progress Bar (Spinner) -->
     <ProgressBar
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

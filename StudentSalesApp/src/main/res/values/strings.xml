@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-
     <!-- Application Name -->
     <string name="app_name">Student Sales App</string>
 
@@ -12,6 +11,7 @@
     <string name="sell_option_text">Sell</string>
     <string name="review_option_text">Review Your Listing</string>
     <string name="settings_option_text">Settings</string>
+
     <!-- Main_activity -->
     <string name="main_list">main_list</string>
 

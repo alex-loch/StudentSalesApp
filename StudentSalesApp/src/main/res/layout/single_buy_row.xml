@@ -80,7 +80,7 @@
             android:textStyle="bold"
         />
 
-    <!-- Contact Details -->
+    <!-- Contact Details (not visible) -->
     <TextView
             android:id="@+id/contact"
             android:layout_width="wrap_content"
@@ -92,12 +92,14 @@
             android:textSize="14sp"
             android:visibility="gone" />
 
+    <!-- Creation Time (date - not visible) -->
     <TextView
         android:id="@+id/creationTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"/>
 
+    <!-- Progress Bar (Spinner) -->
     <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
